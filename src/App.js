@@ -11,6 +11,7 @@ import Reservations from "./components/Reservations";
 function App() {
   return (
     <Router>
+      <div className="grid-container">
       <header>
         <Navbar />
         </header>
@@ -26,7 +27,7 @@ function App() {
       <footer>
         <Footer />
       </footer>
-
+      </div>
     </Router>
   );
 }
