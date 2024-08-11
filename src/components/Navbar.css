@@ -1,7 +1,7 @@
 /* App.css */
 /* 964px bt 956px minimum settings*/
 nav {
-    background-color: #edefee;
+    background-color: #ffffff;
 
 }
 nav ul {
@@ -23,7 +23,7 @@ nav ul {
 
   nav a {
     text-decoration: none; /* Remove underline from links */
-    color: #333; /* Link color (customize as needed) */
+    color: #495e57; /* Link color (customize as needed) */
   }
 
   nav .logo {

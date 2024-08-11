@@ -26,6 +26,7 @@ const Home = () => {
           <img src = "/assetsp/heroimg.jpg" alt="Hero image" className="hero-image" />
         </div>
       </div>
+
       <div className='specials-section'>
         <div className='top-section'>
           <h2>This weeks specials</h2>
@@ -62,6 +63,83 @@ const Home = () => {
           </div>
 
         </div>
+
+      </div>
+
+      <div className='Testimonials-sections' id='baby'>
+        <div className='testimony-title'> Testimonials</div>
+        <div className='top-row'>
+
+          <div className='top1stbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'> Micheal Caldwell </p>
+            <p>This is the best Mediterranean food that I've ever had! </p>
+
+          </div>
+
+          <div className='top2ndbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'>Alan Chen </p>
+            <p>My Shiba Inu, Mugi really loved the cozy vibes and delicious food here. </p>
+
+          </div>
+
+          <div className='top3rdbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'>Casey Lau</p>
+            <p>I've had some greate Mediterranean food before, but none of them beats Little Lemon in flavor and texture. </p>
+
+          </div>
+
+          <div className='top4thbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'> John Rosenblum</p>
+            <p>Great food, working staff, cozy atmosphere. A great place to treat your kids to.</p>
+
+          </div>
+
+        </div>
+
+        <div className='bottom-row'>
+
+          <div className='bot1stbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'>Brian Dean </p>
+            <p> The food here really refrehed me after a late night shift at the socal supply depot.</p>
+
+          </div>
+
+          <div className='bot2ndbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'> Tyler Tohmine</p>
+            <p>I came to little Lemon after a 5 hour flight from the East Coast. The food here tasted so delicious after the trip here.</p>
+
+          </div>
+
+          <div className='bot3rdbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'>Jack Hu </p>
+            <p>This restaurant served as a perfect dinner for me after a long night of studying. I would definitely order from here again!</p>
+
+          </div>
+
+          <div className='bot4thbox'>
+
+            <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
+            <p className='name'>Jim Reynor </p>
+            <p>The food here was fire!! Everyone should try this place out at least once if they live in Chicago.</p>
+
+          </div>
+
+        </div>
+
 
       </div>
     </>
