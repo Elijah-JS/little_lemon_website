@@ -1,3 +1,4 @@
+/*hero section */
 .hero-container {
     display: flex;
     justify-content: space-between; /* Space out left and right boxes */
@@ -12,7 +13,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center; /* Center content vertically */
-    color: #000000; /* Text color for contrast */
     height: 32vh;
     width: 32vw; /* Responsive width */
     margin-left: 12vw;
@@ -71,7 +71,6 @@
     position: relative; /* Ensure proper positioning for the image */
     height: 32vh; /* Full height of the container */
     width: 32vw;
-    background-color: rgb(73, 53, 26);
     margin-right: 12vw;
   }
 
@@ -109,3 +108,87 @@
       margin-bottom: 20px; /* Add space between the stacked boxes */
     }
   }
+/* Specials secrion */
+/* Specials Section */
+.specials-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #edefee;
+}
+
+.top-section {
+    background-color: #edefee;
+    display: flex;
+    flex-direction: column;
+    width: 32vw;
+    margin-left: 34vw;
+    margin-bottom: 2vh;
+}
+
+.top-section h2 {
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.top-section button {
+    font-weight: 550;
+    font-size: 1.1rem;
+    padding: 12px;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    background-color: #f4ce14;
+    border: none;
+    max-width: 40%;
+    margin-left: 8vw;
+}
+
+/* Bottom of Special Section */
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping of cards if necessary */
+    gap: 20px; /* Optional spacing between cards */
+}
+
+.bottom-section .card {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Set a fixed width for cards */
+    height: 400px; /* Set a fixed height for cards */
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Hide overflow content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    background: #fff; /* White background for card */
+    position: relative; /* Positioning context for child elements */
+    margin-bottom: 5vh;
+}
+
+.card img {
+    width: 100%; /* Ensure the image fills the card's width */
+    height: 60%; /* Adjust height to fit the card, can be changed as needed */
+    object-fit: cover; /* Cover the card container */
+    display: block; /* Remove bottom space from images */
+}
+
+/* Optional: Style the card content */
+.card-content {
+    padding: 15px; /* Padding inside the card */
+}
+
+.card-content h3 {
+    font-size: 1.5rem; /* Font size for the card title */
+    margin: 0 0 10px 0; /* Margin below the title */
+}
+
+.card-content p {
+    font-size: 1rem; /* Font size for the card description */
+    color: #555; /* Text color for the description */
+}
+.card-content button{
+    font-weight: 550;
+    font-size: .75rem;
+    padding: 12px;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    background-color: #f4ce14;
+    border: none;
+}

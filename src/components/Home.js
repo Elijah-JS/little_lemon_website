@@ -26,6 +26,44 @@ const Home = () => {
           <img src = "/assetsp/heroimg.jpg" alt="Hero image" className="hero-image" />
         </div>
       </div>
+      <div className='specials-section'>
+        <div className='top-section'>
+          <h2>This weeks specials</h2>
+          <button>Online Menu</button>
+        </div>
+
+        <div className='bottom-section'>
+
+          <div className="card">
+              <img src="/assetsp/heroimg.jpg" alt="image" className="card-image" />
+              <div className="card-content">
+                <h3 className="card-title">title</h3>
+                <p className="card-description">description</p>
+                <button>Order for Delivery</button>
+              </div>
+          </div>
+
+          <div className="card">
+              <img src="/assetsp/heroimg.jpg" alt="image" className="card-image" />
+              <div className="card-content">
+                <h3 className="card-title">title</h3>
+                <p className="card-description">description</p>
+                <button>Order for Delivery</button>
+              </div>
+          </div>
+
+          <div className="card">
+              <img src="/assetsp/heroimg.jpg" alt="image" className="card-image" />
+              <div className="card-content">
+                <h3 className="card-title">title</h3>
+                <p className="card-description">description</p>
+                <button>Order for Delivery</button>
+              </div>
+          </div>
+
+        </div>
+
+      </div>
     </>
   );
 };
