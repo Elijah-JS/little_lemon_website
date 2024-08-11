@@ -17,6 +17,8 @@ nav ul {
 
   nav li {
     margin-right: 55px; /* Space between list items */
+    font-size: 1.25rem;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   nav a {

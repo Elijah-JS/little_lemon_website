@@ -1,0 +1,111 @@
+.hero-container {
+    display: flex;
+    justify-content: space-between; /* Space out left and right boxes */
+    align-items: center; /* Center items vertically */
+    background-color: #495e57;
+    height: 40vh;
+    padding: 0 20px; /* Optional padding */
+    box-sizing: border-box; /* Ensure padding is included in total width/height */
+  }
+
+  .left-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    color: #000000; /* Text color for contrast */
+    height: 32vh;
+    width: 32vw; /* Responsive width */
+    margin-left: 12vw;
+    margin-right: 30px;
+    box-sizing: border-box; /* Ensure padding and margins are included in the width */
+  }
+
+  .left-box h1, .left-box h3, .left-box p, .left-box button {
+    margin: 0; /* Remove default margins */
+  }
+
+  .left-box h1 {
+    font-size: 3.99rem;
+    color: #edefee;
+    font-weight: bold;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+  }
+
+  .left-box h3 {
+    font-size: 1.9rem;
+    color:#edefee;
+    font-weight: normal;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    margin-bottom: 2vh;
+  }
+
+  .left-box p {
+    font-size: 1rem;
+    color: #edefee;
+    font-weight: lighter;
+    max-width: 95%; /* Limit width of the paragraph */
+    margin: 20px 0; /* Space around the description */
+    flex-grow: 1; /* Allow description to take up remaining space */
+  }
+
+  .left-box button {
+    font-weight: 550;
+    font-size: 1.1rem;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    background-color: #f4ce14;
+    width: 80%;
+    padding: 12px;
+    border: none;
+    margin-top: auto; /* Push button to the bottom of the box */
+  }
+  /* Responsive adjustments */
+@media (max-width: 867px) { /* For mobile devices */
+    .left-box button {
+        width: 80%; /* Adjust width for mobile screens */
+        padding: 12px; /* Adjust padding for mobile */
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+}
+
+  .right-box {
+    position: relative; /* Ensure proper positioning for the image */
+    height: 32vh; /* Full height of the container */
+    width: 32vw;
+    background-color: rgb(73, 53, 26);
+    margin-right: 12vw;
+  }
+
+  .right-box img {
+    position: absolute;
+    transform-origin: center; /* Center of the image */
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container */
+  }
+
+  /* Media Queries for Responsive Design */
+  @media (max-width: 1200px) { /* For tablets and smaller desktops */
+    .left-box, .right-box {
+      width: 45vw; /* Adjust width for medium screens */
+      margin-left: 5vw; /* Reduce left margin */
+      margin-right: 5vw; /* Reduce right margin */
+    }
+  }
+
+  @media (max-width: 867px) { /* For mobile devices */
+    .hero-container {
+      flex-direction: column; /* Stack left and right boxes vertically */
+      height: auto; /* Allow height to adjust based on content */
+    }
+
+    .left-box, .right-box {
+      width: 90vw; /* Adjust width for mobile screens */
+      height: auto; /* Adjust height to fit content */
+      margin: 0; /* Remove margins */
+      padding: 10px; /* Optional padding for mobile */
+    }
+
+    .left-box {
+      margin-bottom: 20px; /* Add space between the stacked boxes */
+    }
+  }
