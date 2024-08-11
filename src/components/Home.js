@@ -142,6 +142,17 @@ const Home = () => {
 
 
       </div>
+
+      <div className='about-us'>
+        <div className='leftside'>
+          <h1>Little Lemon</h1>
+          <h3>Chicago</h3>
+          <p>For over 30 years, we’ve been sharing our passion for Italian cooking right here in Chicago. Our kitchen is more than just a place where we cook—it’s where our family traditions come to life. Each dish is made with the same care and love that Mario and Adrian bring to their own family meals. We’re all about using the freshest ingredients and classic recipes to create a warm, inviting dining experience that feels just like home. Come on in and be a part of our extended family—we can’t wait to share our table with you!</p>
+        </div>
+        <div className='right-ide'>
+          <img src='/assetsp/A.jpg' alt='image of owners' />
+        </div>
+      </div>
     </>
   );
 };

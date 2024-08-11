@@ -184,6 +184,8 @@
   color: #555; /* Text color for the description */
 }
 .card-content button{
+  margin-top: 4vh;
+  margin-left: 32.5%;
   font-weight: 550;
   font-size: .75rem;
   padding: 12px;
@@ -268,5 +270,144 @@ p {
   .bot1stbox, .bot2ndbox, .bot3rdbox, .bot4thbox {
     width: 90%; /* Increase width on smaller screens */
     margin-bottom: 20px; /* Space between stacked cards */
+  }
+}
+
+
+.about-us {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f4ce14;
+  width: 100vw; /* Full viewport width */
+  height: 30vh; /* Adjust height as needed */
+  box-sizing: border-box; /* Ensure padding and border are included in the width and height */
+}
+
+.about-us .leftside,
+.about-us .rightside {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  width: 50%; /* Each side takes up 50% of the width */
+  height: 100%; /* Full height of the parent container */
+  box-sizing: border-box; /* Include padding and border in the width and height */
+  overflow: hidden;
+}
+
+.about-us .leftside {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #f4ce14; /* Background color for the left side */
+  padding: 2vw; /* Add padding instead of margin for better control */
+  box-sizing: border-box; /* Ensure padding is included in width/height */
+  overflow: hidden;
+}
+.about-us .leftside h1,
+.about-us .leftside h3,
+.about-us .leftside p {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default padding */
+  overflow-wrap: break-word; /* Break long words to prevent overflow */
+  word-wrap: break-word; /* Same as overflow-wrap for older browsers */
+}
+
+.about-us .leftside h1{
+  font-size: 3.99rem;
+  color: #000000;
+  font-weight: bold;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+.about-us .leftside h3{
+  font-size: 1.9rem;
+    color:#000000;
+    font-weight: normal;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    margin-bottom: 2vh;
+}
+.about-us .leftside p{
+  font-size: 1rem;
+    color: #000000;
+    font-weight: lighter;
+}
+
+
+.about-us .rightside {
+  background-color: aqua; /* Background color for the right side */
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+}
+
+.about-us img {
+  margin: 2vw;
+  max-width: 100%; /* Ensure the image does not exceed container width */
+  max-height: 78.5%; /* Ensure the image does not exceed container height */
+  object-fit: cover; /* Cover the container without distortion */
+  display: block; /* Remove extra space below the image */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .about-us {
+    flex-direction: column; /* Stack leftside and rightside vertically on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .about-us .leftside,
+  .about-us .rightside {
+    width: 100%; /* Full width for each section */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .about-us .leftside {
+    width: 100%; /* Full width on smaller screens */
+    padding: 2vw; /* Maintain padding */
+  }
+
+  .about-us img {
+    max-height: 60vh; /* Adjust image height for better fit */
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us .leftside h1 {
+    font-size: 2.5rem; /* Smaller font size for h1 */
+    margin-top: 4vh; /* Adjust top margin */
+  }
+
+  .about-us .leftside h3 {
+    font-size: 1.5rem; /* Smaller font size for h3 */
+    margin-bottom: 1.5vh; /* Adjust bottom margin */
+  }
+
+  .about-us .leftside p {
+    font-size: 0.9rem; /* Smaller font size for paragraph */
+  }
+
+  .about-us img {
+    max-height: 50vh; /* Further adjust image height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .about-us .leftside h1 {
+    font-size: 1.8rem; /* Even smaller font size for h1 */
+    margin-top: 2vh; /* Adjust top margin */
+  }
+
+  .about-us .leftside h3 {
+    font-size: 1.2rem; /* Smaller font size for h3 */
+    margin-bottom: 1vh; /* Adjust bottom margin */
+  }
+
+  .about-us .leftside p {
+    font-size: 0.8rem; /* Smaller font size for paragraph */
+  }
+
+  .about-us img {
+    max-height: 40vh; /* Further adjust image height for very small screens */
   }
 }
