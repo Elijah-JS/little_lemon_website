@@ -36,28 +36,28 @@ const Home = () => {
         <div className='bottom-section'>
 
           <div className="card">
-              <img src="/assetsp/heroimg.jpg" alt="image" className="card-image" />
+              <img src="/assetsp/salad.jpg" alt="image" className="card-image" />
               <div className="card-content">
-                <h3 className="card-title">title</h3>
-                <p className="card-description">description</p>
+                <h3 className="card-title">Greek Salad</h3>
+                <p className="card-description">Refreshing salad, made with tomato, lettuce, feta cheese, and olives. Dressed with salt, hot pepper, and olive oil.</p>
                 <button>Order for Delivery</button>
               </div>
           </div>
 
           <div className="card">
-              <img src="/assetsp/heroimg.jpg" alt="image" className="card-image" />
+              <img src="/assetsp/bruchetta.svg" alt="image" className="card-image" />
               <div className="card-content">
-                <h3 className="card-title">title</h3>
-                <p className="card-description">description</p>
+                <h3 className="card-title">Bruschetta</h3>
+                <p className="card-description">Toasted bread, topped with tomato, prosciutto, and cheese. Seasoned with salt and olive oil.</p>
                 <button>Order for Delivery</button>
               </div>
           </div>
 
           <div className="card">
-              <img src="/assetsp/heroimg.jpg" alt="image" className="card-image" />
+              <img src="/assetsp/lemons.jpg" alt="image" className="card-image" />
               <div className="card-content">
-                <h3 className="card-title">title</h3>
-                <p className="card-description">description</p>
+                <h3 className="card-title">Lemon Dessert</h3>
+                <p className="card-description">A buttery shortbread base layered with a silky lemon curd, topped with a fresh lemon slice.</p>
                 <button>Order for Delivery</button>
               </div>
           </div>
@@ -90,7 +90,7 @@ const Home = () => {
 
             <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
             <p className='name'>Casey Lau</p>
-            <p>I've had some greate Mediterranean food before, but none of them beats Little Lemon in flavor and texture. </p>
+            <p>I've had some great Mediterranean food before, but none of them beats Little Lemon in flavor and texture. </p>
 
           </div>
 
@@ -110,7 +110,7 @@ const Home = () => {
 
             <img src='/assetsp/star.svg' alt='star-icon' className='star-image'/>
             <p className='name'>Brian Dean </p>
-            <p> The food here really refrehed me after a late night shift at the socal supply depot.</p>
+            <p> The food here really refreshed me after a late night shift at the socal supply depot.</p>
 
           </div>
 

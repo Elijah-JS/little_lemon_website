@@ -23,7 +23,7 @@ nav ul {
 
   nav a {
     text-decoration: none; /* Remove underline from links */
-    color: #495e57; /* Link color (customize as needed) */
+    color: #000000; /* Link color (customize as needed) */
   }
 
   nav .logo {

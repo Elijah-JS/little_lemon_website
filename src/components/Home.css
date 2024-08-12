@@ -49,6 +49,7 @@
   }
 
   .left-box button {
+    border-radius: 8px;
     font-weight: 550;
     font-size: 1.1rem;
     font-family: Georgia, Arial, Helvetica, sans-serif;
@@ -131,6 +132,7 @@
 }
 
 .top-section button {
+  border-radius: 8px;
   font-weight: 550;
   font-size: 1.1rem;
   padding: 12px;
@@ -156,7 +158,7 @@
   height: 450px; /* Set a fixed height for cards */
   border-radius: 10px; /* Rounded corners for the card */
   overflow: hidden; /* Hide overflow content */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .2); /* Shadow for depth */
   background: #edefee; /* White background for card */
   position: relative; /* Positioning context for child elements */
   margin-bottom: 5vh;
@@ -167,6 +169,7 @@
   height: 60%; /* Adjust height to fit the card, can be changed as needed */
   object-fit: cover; /* Cover the card container */
   display: block; /* Remove bottom space from images */
+
 }
 
 /* Optional: Style the card content */
@@ -184,7 +187,8 @@
   color: #555; /* Text color for the description */
 }
 .card-content button{
-  margin-top: 4vh;
+  border-radius: 8px;
+  margin-top: 2vh;
   margin-left: 32.5%;
   font-weight: 550;
   font-size: .75rem;
