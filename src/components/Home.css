@@ -339,7 +339,6 @@ p {
 
 
 .about-us .rightside {
-  background-color: aqua; /* Background color for the right side */
   display: flex;
   justify-content: center; /* Center image horizontally */
   align-items: center; /* Center image vertically */
@@ -351,6 +350,10 @@ p {
   max-height: 78.5%; /* Ensure the image does not exceed container height */
   object-fit: cover; /* Cover the container without distortion */
   display: block; /* Remove extra space below the image */
+}
+
+.home:hover {
+  background-color: #d4b70f; /* Darker shade on hover */
 }
 
 /* Responsive Styles */

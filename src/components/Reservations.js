@@ -71,11 +71,16 @@ const Reservations = () => {
       {/* Page content starts here */}
       <div className="reservation-page">
         <div className="top-box">
-          <div className="titlel&seating-choice">
-            <p>Reservations</p>
+          <div className='leftrow'>
+            <img src='/assetsp/lemon.png' alt='lemon'/>
+          </div>
+
+          <div className='middlerow'>
+          <div className="title-seating-choice">
+            <h1>Reservations</h1>
             <div className="form-field radio-buttons">
               <label className="radiobutton">
-                <h3>Indoor seating</h3>
+                <h3 className='bigh3'>Indoor seating</h3>
                 <input
                   type="radio"
                   name="seating"
@@ -84,8 +89,8 @@ const Reservations = () => {
                   onChange={(e) => setLocation(e.target.value)}
                 />
               </label>
-              <label className="radiobutton">
-                <h3>Outdoor seating</h3>
+              <label className="radiobutton" id='out'>
+                <h3 className='bigh3'>Outdoor seating</h3>
                 <input
                   type="radio"
                   name="seating"
@@ -98,22 +103,23 @@ const Reservations = () => {
           </div>
 
           {/* Dropdown menus section */}
+          < div className='dropdowns'>
           <div className="top-row-dropdown">
-            {/* Right side */}
+            {/* left side */}
             <div className="date-picker-container">
-              <h3>Select a Date</h3>
+              <h3 className='reserveh3'>Select a Date</h3>
               <DatePicker
                 selected={selectedDate}
                 onChange={(date) => setSelectedDate(date)}
-                dateFormat="yyyy/MM/dd"
-                placeholderText="Click to select a date"
+                dateFormat="MM/dd/yyyy"
+                placeholderText="Select a Date"
               />
             </div>
 
-            {/* Left side */}
+            {/* right side */}
             <div className="menu-container" ref={dinerRef}>
-              <h3>Number of Diners</h3>
-              <button className="dropdown-button" onClick={toggleDinerMenu}>
+              <h3 className='reserveh3'>Number of Diners</h3>
+              <button className="dropdown-button" id="buttoncolor" onClick={toggleDinerMenu}>
                 {selectedDiner}
               </button>
               {showDinerMenu && (
@@ -123,7 +129,7 @@ const Reservations = () => {
                   <li><a href="#" onClick={() => handleDinerSelect('3 Diners')}>3 Diners</a></li>
                   <li><a href="#" onClick={() => handleDinerSelect('5 Diners')}>5 Diners</a></li>
                   <li><a href="#" onClick={() => handleDinerSelect('7 Diners')}>7 Diners</a></li>
-                  <li><a href="#" onClick={() => handleDinerSelect('9 Diners')}>7 Diners</a></li>
+                  <li><a href="#" onClick={() => handleDinerSelect('9 Diners')}>9 Diners</a></li>
                 </ul>
 
                 <ul className="diner-menu2">
@@ -141,12 +147,12 @@ const Reservations = () => {
 
           <div className="bottom-row-dropdown">
             <div className="menu-container" ref={occasionRef}>
-              <h3>Occasion</h3>
+              <h3 className='reserveh3'>Occasion</h3>
               <button className="dropdown-button" onClick={toggleOccasionMenu}>
                 {selectedOccasion}
               </button>
               {showOccasionMenu && (
-                <ul className="dropdown-menu">
+                <ul className="dropocassion-menu">
                   <li><a href="#" onClick={() => handleOccasionSelect('Birthday')}>Birthday</a></li>
                   <li><a href="#" onClick={() => handleOccasionSelect('Engagement')}>Engagement</a></li>
                   <li><a href="#" onClick={() => handleOccasionSelect('Anniversary')}>Anniversary</a></li>
@@ -155,34 +161,39 @@ const Reservations = () => {
             </div>
 
             <div className="menu-container" ref={timeRef}>
-              <h3>Time</h3>
+              <h3 className='reserveh3'>Time</h3>
               <button className="dropdown-button" onClick={toggleTimeMenu}>
                 {selectedTime}
               </button>
               {showTimeMenu && (
                 <div className='timemenus'>
                 <ul className="timemenu1">
-                  <li><a href="#" onClick={() => handleTimeSelect('5pm')}>5pm</a></li>
-                  <li><a href="#" onClick={() => handleTimeSelect('7pm')}>7pm</a></li>
-                  <li><a href="#" onClick={() => handleTimeSelect('9pm')}>9pm</a></li>
+                  <li><a href="#" onClick={() => handleTimeSelect('5 pm')}>5 pm</a></li>
+                  <li><a href="#" onClick={() => handleTimeSelect('7 pm')}>7 pm</a></li>
+                  <li><a href="#" onClick={() => handleTimeSelect('9 pm')}>9 pm</a></li>
                 </ul>
 
                 <ul className='timemenu2'>
-                  <li><a href="#" onClick={() => handleTimeSelect('6pm')}>6pm</a></li>
-                  <li><a href="#" onClick={() => handleTimeSelect('8pm')}>8pm</a></li>
-                  <li><a href="#" onClick={() => handleTimeSelect('10pm')}>10pm</a></li>
+                  <li><a href="#" onClick={() => handleTimeSelect('6 pm')}>6 pm</a></li>
+                  <li><a href="#" onClick={() => handleTimeSelect('8 pm')}>8 pm</a></li>
+                  <li><a href="#" onClick={() => handleTimeSelect('10 pm')}>10 pm</a></li>
                 </ul>
                 </div>
 
               )}
             </div>
           </div>
+          </div>
+          </div>
+          <div className='rightrow'>
+            <img src='/assetsp/lemon.png' alt='lemon'/>
+          </div>
         </div>
         <div className="bottom">
           <div className="image-row">
-            <img src="/path/to/image1.jpg" alt="Image 1" />
-            <img src="/path/to/image2.jpg" alt="Image 2" />
-            <img src="/path/to/image3.jpg" alt="Image 3" />
+            <img src="/assetsp/last.jpg" alt="Image 1" />
+            <img src="/assetsp/new.jpeg" alt="Image 2" />
+            <img src="/assetsp/spag.jpg" alt="Image 3" />
           </div>
           <div className="reserve-button-section">
             <button className="reserve-button">Reserve a table</button>

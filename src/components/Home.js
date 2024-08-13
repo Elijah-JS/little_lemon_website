@@ -20,7 +20,7 @@ const Home = () => {
           <h1>Little Lemon</h1>
           <h3>Chicago</h3>
           <p>Indulge in the vibrant and aromatic flavors of Mediterranean cuisine right here in Chicago. From zesty lemon-infused dishes to savory classics, our menu celebrates the rich traditions and fresh ingredients of Mediterranean cooking. Join us for an unforgettable dining experience where every meal is a taste of the Mediterranean.</p>
-          <button>Reserve a Table</button>
+          <button className='home'>Reserve a Table</button>
         </div>
         <div className='right-box'>
           <img src = "/assetsp/heroimg.jpg" alt="Hero image" className="hero-image" />
@@ -30,7 +30,7 @@ const Home = () => {
       <div className='specials-section'>
         <div className='top-section'>
           <h2>This weeks specials</h2>
-          <button>Online Menu</button>
+          <button className='home'>Online Menu</button>
         </div>
 
         <div className='bottom-section'>
@@ -40,7 +40,7 @@ const Home = () => {
               <div className="card-content">
                 <h3 className="card-title">Greek Salad</h3>
                 <p className="card-description">Refreshing salad, made with tomato, lettuce, feta cheese, and olives. Dressed with salt, hot pepper, and olive oil.</p>
-                <button>Order for Delivery</button>
+                <button className='home'>Order for Delivery</button>
               </div>
           </div>
 
@@ -49,7 +49,7 @@ const Home = () => {
               <div className="card-content">
                 <h3 className="card-title">Bruschetta</h3>
                 <p className="card-description">Toasted bread, topped with tomato, prosciutto, and cheese. Seasoned with salt and olive oil.</p>
-                <button>Order for Delivery</button>
+                <button className='home'>Order for Delivery</button>
               </div>
           </div>
 
@@ -58,7 +58,7 @@ const Home = () => {
               <div className="card-content">
                 <h3 className="card-title">Lemon Dessert</h3>
                 <p className="card-description">A buttery shortbread base layered with a silky lemon curd, topped with a fresh lemon slice.</p>
-                <button>Order for Delivery</button>
+                <button className='home'>Order for Delivery</button>
               </div>
           </div>
 
