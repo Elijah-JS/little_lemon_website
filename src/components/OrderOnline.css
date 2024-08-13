@@ -1,0 +1,242 @@
+/* Order Online Page */
+
+/* Header Section */
+.order-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+  }
+
+  .order-header {
+    text-align: center;
+    background-color: #495e57;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .order-header h1 {
+    font-size: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    margin: 0; /* Ensure no extra margin */
+  }
+
+  /* Menu Section */
+  .menu-section {
+    width: 100%;
+    justify-content: space-around;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap if necessary */
+    gap: 26px; /* Space between cards */
+  }
+
+  .menu-section h2 {
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%; /* Full width to center the heading */
+  }
+
+  .menu-card {
+    display: flex;
+    flex-direction: column;
+    width: 380px; /* Set a fixed width for cards */
+    height: 400px; /* Set a fixed height for cards */
+    border-radius: 10px; /* Rounded corners for the card */
+    overflow: hidden; /* Hide overflow content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    background: #edefee; /* Background color for card */
+    position: relative; /* Positioning context for child elements */
+    margin-bottom: 50px; /* Space below each card */
+  }
+
+  .menu-card img {
+    width: 100%; /* Ensure the image fills the card's width */
+    height: 60%; /* Adjust height to fit the card, can be changed as needed */
+    object-fit: cover; /* Cover the card container */
+    display: block; /* Remove bottom space from images */
+  }
+
+  .menu-card .card-content {
+    padding: 15px; /* Padding inside the card */
+    flex-grow: 1; /* Allow content to take up remaining space */
+  }
+
+  .menu-card h3 {
+    font-size: 1.5rem; /* Font size for the card title */
+    margin: 0 0 10px 0; /* Margin below the title */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+
+  .menu-card p {
+    font-size: 1rem; /* Font size for the card description */
+    color: #555; /* Text color for the description */
+    margin: 0 0 10px 0; /* Margin below the description */
+  }
+
+  .menu-card button {
+    border-radius: 8px;
+    font-weight: 550;
+    font-size: 1rem;
+    padding: 10px;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    background-color: #f4ce14;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Cart Section */
+  .order-section {
+    width: 100%; /* Ensure full width */
+    padding: 20px;
+    background-color: #f4ce14;
+  }
+
+  .order-section h2 {
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+
+  .order-section ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .order-section li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #000000;
+    color: #000000;
+  }
+
+  .order-section h3 {
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #000000;
+  }
+
+  .order-section form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .order-section label {
+    color: #000000;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+  }
+
+  .order-section input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .order-section button {
+    border-radius: 8px;
+    font-weight: 550;
+    font-size: 1.1rem;
+    padding: 12px;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
+    background-color: #000000;
+    width:50%;
+    margin-left: 25%;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .order-section button:hover{
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .bottom-half {
+    width: 100%;
+    padding-right: 22px;
+    background-color: #f4ce14;
+    padding-left: 22px;
+    padding-bottom: 22px;
+    margin-bottom: -20px !important;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .menu-section {
+      width: 90%;
+    }
+
+    .order-header h1 {
+      font-size: 2.5rem;
+    }
+
+    .menu-section h2, .order-section h2 {
+      font-size: 2rem;
+    }
+
+    .order-section h3 {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .order-header h1 {
+      font-size: 2rem;
+    }
+
+    .menu-section h2, .order-section h2 {
+      font-size: 1.75rem;
+    }
+
+    .order-section h3 {
+      font-size: 1.1rem;
+    }
+
+    .order-section input, .order-section button {
+      font-size: 0.9rem;
+    }
+
+    .menu-card {
+      width: 250px;
+      height: auto; /* Allow height to adjust based on content */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .order-header h1 {
+      font-size: 1.5rem;
+    }
+
+    .menu-section h2, .order-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .order-section h3 {
+      font-size: 1rem;
+    }
+
+    .order-section input, .order-section button {
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+
+    .menu-card {
+      width: 100%; /* Full width for small screens */
+      height: auto; /* Allow height to adjust based on content */
+    }
+  }
