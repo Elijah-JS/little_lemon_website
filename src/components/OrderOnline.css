@@ -155,6 +155,7 @@
     font-size: 1.5rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     justify-content: space-between;
+    border-bottom: 2px solid#ffffff;
     padding: 10px 0;
     color: #000000;
   }
