@@ -1,119 +1,119 @@
 
 
-  .leftrow img {
-    width: 250px; /* Set width to 100 pixels */
-    height: auto; /* Maintain aspect ratio */
-    margin: 2vw;
-    margin-right: 5vw;
-  }
-  .rightrow img{
-    width: 250px; /* Set width to 100 pixels */
-    height: auto; /* Maintain aspect ratio */
-    margin: 2vw;
-    margin-left: 5vw;
-  }
+.leftrow img {
+  width: 250px; /* Set width to 100 pixels */
+  height: auto; /* Maintain aspect ratio */
+  margin: 2vw;
+  margin-right: 5vw;
+}
+.rightrow img{
+  width: 250px; /* Set width to 100 pixels */
+  height: auto; /* Maintain aspect ratio */
+  margin: 2vw;
+  margin-left: 5vw;
+}
 
 .middlerow{
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 
 /* The .top-box will be a full-width section with content aligned vertically */
 .top-box {
-  background-color: #495e57;
-  padding: 20px; /* Add padding around the content */
-  display: flex;
-  justify-content: space-around;
+background-color: #495e57;
+padding: 20px; /* Add padding around the content */
+display: flex;
+justify-content: space-around;
 }
 
 /* Aligns the title and radio buttons in a column */
 .title-seating-choice {
-  display: flex;
-  flex-direction: column;
-  margin-left: 170px;
-  align-items: flex-start; /* Align items to the left */
-  text-align: center;
+display: flex;
+flex-direction: column;
+margin-left: 170px;
+align-items: flex-start; /* Align items to the left */
+text-align: center;
 }
 
 /* Aligns the title text specifically */
 .title-seating-choice h1 {
-  color: #f4ce14;
-  font-size: 4rem;
-  font-weight: lighter;
-  font-family: Georgia, Arial, Helvetica, sans-serif;
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  margin-bottom: 24px;
+color: #f4ce14;
+font-size: 4rem;
+font-weight: lighter;
+font-family: Georgia, Arial, Helvetica, sans-serif;
+margin: 0; /* Remove default margin */
+padding: 0; /* Remove default padding */
+margin-bottom: 24px;
 }
 
 /* Flexbox container for radio buttons */
 .radio-buttons {
-  display: flex;
+display: flex;
 }
 
 /* Flexbox container for individual radio buttons */
 .radiobutton {
-  display: flex;
-  margin-right: 184px; /* Add spacing between radio buttons */
+display: flex;
+margin-right: 184px; /* Add spacing between radio buttons */
 }
 
 /* Container for dropdowns, stacked vertically */
 .dropdowns {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Add space between dropdown sections */
-  margin-bottom: 2vh;
-  margin-left: 170px;
+display: flex;
+flex-direction: column;
+gap: 20px; /* Add space between dropdown sections */
+margin-bottom: 2vh;
+margin-left: 170px;
 
 }
 
 /* Flexbox container for dropdowns in the top row */
 .top-row-dropdown {
-  display: flex;
-  gap:200px;
+display: flex;
+gap:200px;
 
 }
 
 /* Flexbox container for dropdowns in the bottom row */
 .bottom-row-dropdown {
-  display: flex;
-  gap:200px;
+display: flex;
+gap:200px;
 }
 
 /* Add any additional styling for dropdowns */
 .menu-container {
-  position: relative; /* Needed for dropdown positioning */
+position: relative; /* Needed for dropdown positioning */
 }
 
 .dropdown-button {
-  cursor: pointer;
+cursor: pointer;
 }
 
 .timemenus{
-  display: flex;
+display: flex;
 }
 
 .dinermenus{
-  display: flex;
+display: flex;
 }
 
 .dropdown-menu, .dinermenus, .timemenus {
-  position: absolute;
-  background-color: #b32626; /* Background color for dropdowns */
-  border: 1px solid #ccc; /* Border for dropdowns */
-  list-style: none; /* Remove list styling */
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  z-index: 1000; /* Ensure dropdowns appear above other content */
+position: absolute;
+background-color: #b32626; /* Background color for dropdowns */
+border: 1px solid #ccc; /* Border for dropdowns */
+list-style: none; /* Remove list styling */
+padding: 0;
+margin: 0;
+text-decoration: none;
+z-index: 1000; /* Ensure dropdowns appear above other content */
 }
 
 .dropdown-menu li, .dinermenu1 li, .diner-menu2 li, .timemenu1 li, .timemenu2 li, .dropocassion-menu li {
-  padding: 10px;
-  cursor: pointer;
-  font-size: medium;
-  list-style: none;
-  text-decoration: none;
+padding: 10px;
+cursor: pointer;
+font-size: medium;
+list-style: none;
+text-decoration: none;
 }
 
 
@@ -121,133 +121,133 @@
 /*datepicker styles*/
 /* Styles for the DatePicker container */
 .react-datepicker {
-  font-family: Georgia, serif; /* Apply Georgia font family to the entire DatePicker */
-  border: none; /* Remove default border */
-  font-family: Georgia, serif; /* Apply Georgia font family */
-  font-size: 24px; /* Set font size */
-  border: none; /* Remove default border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
-  color:#495e57 !important;
+font-family: Georgia, serif; /* Apply Georgia font family to the entire DatePicker */
+border: none; /* Remove default border */
+font-family: Georgia, serif; /* Apply Georgia font family */
+font-size: 24px; /* Set font size */
+border: none; /* Remove default border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
+transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+color:#495e57 !important;
 }
 
 /* Remove the border on focus */
 .react-datepicker__input-container input {
-  border: none; /* Remove border from the input field */
-  border-radius: 8px; /* Apply rounded corners */
-  outline: none; /* Remove outline on focus */
-  padding: 15px; /* Add padding if needed */
-  font-family: Georgia, serif; /* Ensure Georgia font is used */
-  background-color: #ffffff; /* Background color */
-  font-size: 1.5rem; /* Set font size */
-  text-align: center;
-  width: 219.34px;
-  border: none; /* Remove default border */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+border: none; /* Remove border from the input field */
+border-radius: 8px; /* Apply rounded corners */
+outline: none; /* Remove outline on focus */
+padding: 15px; /* Add padding if needed */
+font-family: Georgia, serif; /* Ensure Georgia font is used */
+background-color: #ffffff; /* Background color */
+font-size: 1.5rem; /* Set font size */
+text-align: center;
+width: 219.34px;
+border: none; /* Remove default border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Box shadow */
+transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
 
 }
 
 
 /* Styles for the header section */
 .react-datepicker__header {
-  border: none; /* Remove default border */
-  border-radius: 8px 8px 0 0; /* Rounded corners at the top */
-  background-color: transparent; /* Remove background color */
-  color: #495e57; /* Green color for header text */
-  text-align: left; /* Align text to the left */
-  padding: 0 15px; /* Adjust padding on both sides */
-  position: relative; /* Position relative for navigation */
-  font-family: Georgia, serif; /* Apply Georgia font family */
+border: none; /* Remove default border */
+border-radius: 8px 8px 0 0; /* Rounded corners at the top */
+background-color: transparent; /* Remove background color */
+color: #495e57; /* Green color for header text */
+text-align: left; /* Align text to the left */
+padding: 0 15px; /* Adjust padding on both sides */
+position: relative; /* Position relative for navigation */
+font-family: Georgia, serif; /* Apply Georgia font family */
 }
 
 /* Adjust alignment for the month and year selectors */
 .react-datepicker__current-month {
-  margin-left: 0; /* Reset margin-left to ensure it's properly aligned */
-  font-family: Georgia, serif; /* Apply Georgia font family */
-  color: #495e57; /* Green color for the month and year text */
+margin-left: 0; /* Reset margin-left to ensure it's properly aligned */
+font-family: Georgia, serif; /* Apply Georgia font family */
+color: #495e57; /* Green color for the month and year text */
 }
 
 /* Styles for navigation arrows */
 .react-datepicker__navigation--previous,
 .react-datepicker__navigation--next {
-  margin-left: 0; /* Reset margin-left */
-  margin-right: 15px; /* Add margin to the right if needed */
-  font-family: Georgia, serif; /* Apply Georgia font family */
-  color: #495e57; /* Green color for navigation arrows */
+margin-left: 0; /* Reset margin-left */
+margin-right: 15px; /* Add margin to the right if needed */
+font-family: Georgia, serif; /* Apply Georgia font family */
+color: #495e57; /* Green color for navigation arrows */
 }
 
 /* Styles for the day names (Sun, Mon, etc.) */
 .react-datepicker__day-names {
-  background-color: transparent; /* Remove background color */
-  color: #495e57; /* Green color for day names */
-  font-family: Georgia, serif; /* Ensure Georgia font is used */
-  margin-left: 15px;
-  display: grid;
-  grid-template-columns: repeat(7, 1fr); /* Create 7 equal columns */
-  gap: 0; /* No gap between columns */
-  text-align: center; /* Center the text in each column */
+background-color: transparent; /* Remove background color */
+color: #495e57; /* Green color for day names */
+font-family: Georgia, serif; /* Ensure Georgia font is used */
+margin-left: 15px;
+display: grid;
+grid-template-columns: repeat(7, 1fr); /* Create 7 equal columns */
+gap: 0; /* No gap between columns */
+text-align: center; /* Center the text in each column */
 }
 
 /* Styles for the day cells */
 .react-datepicker__day {
-  background-color: transparent; /* Remove background color for day cells */
-  color: #495e57; /* Green color for day cells */
-  border-radius: 8px; /* Rounded corners for day cells */
-  border: 1px solid #ddd; /* Add border around each day cell */
-  padding: 5px; /* Add padding inside each day cell */
-  font-family: Georgia, serif; /* Apply Georgia font family */
+background-color: transparent; /* Remove background color for day cells */
+color: #495e57; /* Green color for day cells */
+border-radius: 8px; /* Rounded corners for day cells */
+border: 1px solid #ddd; /* Add border around each day cell */
+padding: 5px; /* Add padding inside each day cell */
+font-family: Georgia, serif; /* Apply Georgia font family */
 }
 
 /* Styles for selected day */
 .react-datepicker__day--selected {
-  background-color: #f4ce14; /* Background color for selected day */
-  color: #495e57; /* Green color for selected day text */
-  font-family: Georgia, serif; /* Apply Georgia font family */
+background-color: #f4ce14; /* Background color for selected day */
+color: #495e57; /* Green color for selected day text */
+font-family: Georgia, serif; /* Apply Georgia font family */
 }
 
 /* Styles for today's date */
 .react-datepicker__day--today {
-  border: 1px solid #495e57; /* Border for today's date */
-  color: #495e57; /* Green color for today's date */
-  font-family: Georgia, serif; /* Apply Georgia font family */
+border: 1px solid #495e57; /* Border for today's date */
+color: #495e57; /* Green color for today's date */
+font-family: Georgia, serif; /* Apply Georgia font family */
 }
 
 /* Styles for the month/year dropdowns */
 .react-datepicker__navigation {
-  border-color: transparent; /* Remove border color for navigation arrows */
-  font-family: Georgia, serif; /* Apply Georgia font family */
+border-color: transparent; /* Remove border color for navigation arrows */
+font-family: Georgia, serif; /* Apply Georgia font family */
 }
 
 /* Styles for the popper container */
 .react-datepicker-popper {
-  border: none; /* Remove border from popper container */
-  border-radius: 8px; /* Rounded corners for the popper container */
+border: none; /* Remove border from popper container */
+border-radius: 8px; /* Rounded corners for the popper container */
 }
 
 /*datepicker hover settings*/
 /* Ensure hover styles for the DatePicker container */
 .react-datepicker:hover {
-  background-color: #ffffff; /* Background color of the DatePicker popup */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Apply box shadow */
+background-color: #ffffff; /* Background color of the DatePicker popup */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Apply box shadow */
 }
 
 /* Ensure hover styles for the DatePicker input field */
 .react-datepicker__input-container input:hover {
-  color: #ffffff !important; /* Text color on hover */
-  background-color: #495e57; /* Background color on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Apply box shadow */
+color: #ffffff !important; /* Text color on hover */
+background-color: #495e57; /* Background color on hover */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Apply box shadow */
 }
 
 /*color change*/
 
 .react-datepicker__input-container input:hover::placeholder {
-  color: #ffffff !important; /* Ensure placeholder text color changes on hover */
+color: #ffffff !important; /* Ensure placeholder text color changes on hover */
 }
 
 /* For the input text color */
 .react-datepicker__input-container input::placeholder{
-  color: #495e57 !important; /* Ensure input text color changes on hover */
+color: #495e57 !important; /* Ensure input text color changes on hover */
 }
 
 
@@ -255,34 +255,34 @@
 
 /* Header styles on hover */
 .react-datepicker__header {
-  background-color: #ffffff; /* Background color of the header */
-  color: #495e57; /* Text color of the header */
+background-color: #ffffff; /* Background color of the header */
+color: #495e57; /* Text color of the header */
 }
 
 
 /* Day cells hover style */
 .react-datepicker__day {
-  background-color: transparent; /* Default background color */
-  color: #4e0c25; /* Default text color */
+background-color: transparent; /* Default background color */
+color: #4e0c25; /* Default text color */
 }
 
 .react-datepicker__day:hover {
-  background-color: #f4ce14; /* Background color on hover */
-  color: #495e57; /* Text color on hover */
-  box-shadow: 0 8px 14px #495e57; /* Apply box shadow */
+background-color: #f4ce14; /* Background color on hover */
+color: #495e57; /* Text color on hover */
+box-shadow: 0 8px 14px #495e57; /* Apply box shadow */
 }
 
 /* Selected day styles */
 .react-datepicker__day--selected {
-  background-color: #f4ce14; /* Background color for selected day */
-  color: #495e57; /* Text color for selected day */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Apply box shadow */
+background-color: #f4ce14; /* Background color for selected day */
+color: #495e57; /* Text color for selected day */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Apply box shadow */
 }
 
 /* Today's date style */
 .react-datepicker__day--today {
-  border: 1px solid #495e57; /* Border for today's date */
-  color: #495e57; /* Text color for today's date */
+border: 1px solid #495e57; /* Border for today's date */
+color: #495e57; /* Text color for today's date */
 }
 
 
@@ -291,134 +291,134 @@
 
 /* General style for all dropdown containers */
 .menu-container {
-  position: relative; /* Needed for dropdown positioning */
-  text-decoration: none;
+position: relative; /* Needed for dropdown positioning */
+text-decoration: none;
 }
 
 /* General style for dropdown menus to ensure equal length */
 .dropocassion-menu, .dinermenus, .timemenus {
-  position: absolute;
-  background-color: #ffffff; /* Match background color */
-  border: 1px solid #ccc; /* Match border color */
-  border-radius: 8px; /* Apply rounded corners */
-  list-style: none; /* Remove list styling */
-  text-decoration: none;
-  padding: 0;
-  margin-top: 10px;
-  z-index: 1000; /* Ensure dropdown appears above other content */
-  width: 100%; /* Set fixed width for equal length */
+position: absolute;
+background-color: #ffffff; /* Match background color */
+border: 1px solid #ccc; /* Match border color */
+border-radius: 8px; /* Apply rounded corners */
+list-style: none; /* Remove list styling */
+text-decoration: none;
+padding: 0;
+margin-top: 10px;
+z-index: 1000; /* Ensure dropdown appears above other content */
+width: 100%; /* Set fixed width for equal length */
 }
 
 /* Style for dropdown items */
 .dropdown-menu li, .dinermenu1 li, .diner-menu2 li, .timemenu1 li, .timemenu2 li, .dropocassion-menu li {
-  padding: 10px;
-  cursor: pointer;
-  color: #495e57; /* Match text color */
-  text-decoration: none !important;
+padding: 10px;
+cursor: pointer;
+color: #495e57; /* Match text color */
+text-decoration: none !important;
 }
 
 /* Ensure no default link styles are applied */
 .dropocassion-menu li a, .dropdown-menu li a, .dinermenu1 li a, .diner-menu2 li a, .timemenu1 li a, .timemenu2 li a {
-  text-decoration: none; /* Remove underline from links */
-  color: inherit; /* Inherit color from parent */
+text-decoration: none; /* Remove underline from links */
+color: inherit; /* Inherit color from parent */
 }
 
 
 /* Style for dropdown buttons */
 .dropdown-button {
-  font-size: 1.5rem;
-  font-family: Georgia, serif; /* Apply Georgia font family */
-  border: none; /* Remove default border */
-  border-radius: 8px; /* Apply rounded corners */
-  background-color: #ffffff; /* Match background color */
-  color: #495e57; /* Match text color */
-  padding: 15px; /* Add padding for a consistent look */
-  cursor: pointer; /* Pointer cursor on hover */
-  outline: none; /* Remove outline on focus */
-  box-shadow:0 4px 8px rgba(0, 0, 0, 0.3); /* Remove box shadow on focus */
-  transition: background-color 0.3s, box-shadow 0.3s;
+font-size: 1.5rem;
+font-family: Georgia, serif; /* Apply Georgia font family */
+border: none; /* Remove default border */
+border-radius: 8px; /* Apply rounded corners */
+background-color: #ffffff; /* Match background color */
+color: #495e57; /* Match text color */
+padding: 15px; /* Add padding for a consistent look */
+cursor: pointer; /* Pointer cursor on hover */
+outline: none; /* Remove outline on focus */
+box-shadow:0 4px 8px rgba(0, 0, 0, 0.3); /* Remove box shadow on focus */
+transition: background-color 0.3s, box-shadow 0.3s;
 
-  width: 250px; /* Set fixed width for equal length */
+width: 250px; /* Set fixed width for equal length */
 }
 
 .dropdown-button:hover{
-  color: #ffffff;
-  background-color: #495e57;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+color: #ffffff;
+background-color: #495e57;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 
 }
 
 
 
 .bottom{
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 .image-row {
-  display: flex;
-  gap: 10px; /* Space between images */
-  margin: 2vw;
-  justify-content: space-around;
+display: flex;
+gap: 10px; /* Space between images */
+margin: 2vw;
+justify-content: space-around;
 }
 .image-row img {
-  width: 350px;
-  height: 250px;
-  object-fit: cover; /* Cover the card container */
-  display: block; /* Remove bottom space from images */
-  border-radius: 25px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, .3); /* Shadow for depth */
+width: 350px;
+height: 250px;
+object-fit: cover; /* Cover the card container */
+display: block; /* Remove bottom space from images */
+border-radius: 25px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, .3); /* Shadow for depth */
 
 }
 
 .reserve-button-section {
-  text-align: center; /* Center the button */
+text-align: center; /* Center the button */
 }
 
 .reserve-button {
-  border-radius: 8px;
-  font-weight: 550;
-  font-size: 1.5rem;
-  padding: 12px;
-  font-family: Georgia, Arial, Helvetica, sans-serif;
-  background-color: #f4ce14;
-  border: none;
-  width: 17vw;
-  margin: 2vw;
-  transition: background-color 0.3s;
+border-radius: 8px;
+font-weight: 550;
+font-size: 1.5rem;
+padding: 12px;
+font-family: Georgia, Arial, Helvetica, sans-serif;
+background-color: #f4ce14;
+border: none;
+width: 17vw;
+margin: 2vw;
+transition: background-color 0.3s;
 }
 
 .reserve-button:hover {
-  background-color: #d4b70f; /* Darker shade on hover */
-  color: #ffffff;
+background-color: #d4b70f; /* Darker shade on hover */
+color: #ffffff;
 }
 
 .reserve-button:active{
-    transform: scale(0.95); /* Slightly shrinks the button */
-    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
-    background-color: #d4a62f; /* Darker shade of the button’s color */
+  transform: scale(0.95); /* Slightly shrinks the button */
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
+  background-color: #d4a62f; /* Darker shade of the button’s color */
 }
 .reserveh3{
-  color: #fff;
-  font-size: 1.1rem;
-  font-family: Georgia, serif; /* Apply Georgia font family */
+color: #fff;
+font-size: 1.1rem;
+font-family: Georgia, serif; /* Apply Georgia font family */
 }
 
 .bigh3{
-  color: #fff;
-  font-size: 1.4rem;
-  font-family: Georgia, serif; /* Apply Georgia font family */
+color: #fff;
+font-size: 1.4rem;
+font-family: Georgia, serif; /* Apply Georgia font family */
 
 }
 
 #out .bigh3{
 
-  margin-left: 74px;
+margin-left: 74px;
 }
 
 #bb{
-  background-color: #495e57;
-  color: #ffffff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+background-color: #495e57;
+color: #ffffff;
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 

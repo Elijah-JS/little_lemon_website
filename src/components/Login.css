@@ -1,0 +1,103 @@
+.login-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4ce14;
+}
+.login-section p{
+    padding: 25px;
+    margin: 25px;
+    font-size: 3rem;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #000000;
+}
+
+.rows{
+    display: flex;
+}
+
+/* Form Styling */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.loginbuttons {
+    width: 100%;
+}
+
+/* Container for input and icon */
+.login-input-container {
+    position: relative;
+    margin-bottom: 15px;
+    margin-top: 50px;
+}
+
+.input-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; /* Adjust the position of the icon as needed */
+    transform: translateY(-50%);
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+}
+
+#user input[type="text"],  #pass input[type="password"] {
+    padding: 10px 10px 10px 80px; /* Add padding to account for the icon */
+    font-size: 1.5rem;
+    border: 1px solid #f4ce14;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%; /* Full width to fill container */
+    color: #000000;
+}
+.username input::placeholder{
+    color: #000000;
+}
+.password input::placeholder{
+    color: #000000;
+}
+
+.logbutton {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #000000; /* Adjust the color as needed */
+    color: #ffffff;
+    cursor: pointer;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+.logbutton:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.logbutton:active{
+    transform: scale(0.95); /* Slightly shrinks the button */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
+    color: #f7e04e;
+    background-color: #000000;
+}
+
+.leftside img {
+    width: 375px;
+    height: auto;
+    padding: 30px;
+    margin-right: 50px;
+}
+
+.rightside img{
+    width: 375px;
+    height: auto;
+    padding: 30px;
+    margin-left: 50px;
+}
