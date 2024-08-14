@@ -136,6 +136,7 @@
 
   .order-section h2 {
     font-size: 3rem;
+    font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     color: #000000;
@@ -160,6 +161,7 @@
 
   .order-section h3 {
     font-size: 2rem;
+    font-style: italic;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     margin: 20px 0;
@@ -176,6 +178,7 @@
     margin-bottom: 10px;
     font-size: 1rem;
     font-weight: bold;
+    font-style: italic;
     font-family: Georgia, Arial, Helvetica, sans-serif;
   }
 
