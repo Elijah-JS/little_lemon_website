@@ -1,5 +1,4 @@
 /* Order Online Page */
-
 /* Header Section */
 .order-page {
     display: flex;
@@ -7,6 +6,24 @@
     align-items: center;
     background-color: #ffffff;
     padding: 20px;
+  }
+
+  .wholebottombox{
+    display: flex;
+
+  }
+  .image1{
+    flex: 1;
+    width: 100%; /* Set width to 100 pixels */
+    height: auto; /* Maintain aspect ratio */
+
+  }
+
+  .image2{
+    width: 100%; /* Set width to 100 pixels */
+    height: auto; /* Maintain aspect ratio */
+    flex: 1;
+
   }
 
   .order-header {
@@ -22,13 +39,17 @@
     font-weight: bold;
     font-family: Georgia, Arial, Helvetica, sans-serif;
     margin: 0; /* Ensure no extra margin */
+    margin-left: 5vw;
+    padding:20px ;
   }
 
   /* Menu Section */
   .menu-section {
-    width: 100%;
+    flex: 1;
     justify-content: space-around;
-    margin: 20px auto;
+    margin: 40px auto;
+    margin-top: 90px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap; /* Allow cards to wrap if necessary */
     gap: 26px; /* Space between cards */
@@ -75,35 +96,51 @@
   }
 
   .menu-card p {
-    font-size: 1rem; /* Font size for the card description */
-    color: #555; /* Text color for the description */
+    font-size: 1.1rem; /* Font size for the card description */
+    color: #000000; /* Text color for the description */
     margin: 0 0 10px 0; /* Margin below the description */
   }
 
   .menu-card button {
     border-radius: 8px;
     font-weight: 550;
-    font-size: 1rem;
-    padding: 10px;
+    font-size: .75rem;
+    padding: 12px;
+    width: 40%;
     font-family: Georgia, Arial, Helvetica, sans-serif;
     background-color: #f4ce14;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s;
   }
+
+  .menu-card button:hover {
+    background-color: #d4b70f; /* Darker shade on hover */
+    color: #ffffff;
+
+  }
+  .menu-card button:active{
+    transform: scale(0.95); /* Slightly shrinks the button */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
+    background-color: #d4a62f; /* Darker shade of the button’s color */
+}
+
 
   /* Cart Section */
   .order-section {
     width: 100%; /* Ensure full width */
     padding: 20px;
     background-color: #f4ce14;
+    justify-content: center;
   }
 
   .order-section h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     color: #000000;
-    margin-bottom: 20px;
+    margin-bottom: 175px;
+
   }
 
   .order-section ul {
@@ -113,14 +150,16 @@
 
   .order-section li {
     display: flex;
+    font-style: italic;
+    font-size: 1.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     justify-content: space-between;
     padding: 10px 0;
-    border-bottom: 1px solid #000000;
     color: #000000;
   }
 
   .order-section h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
     margin: 20px 0;
@@ -136,6 +175,7 @@
     color: #000000;
     margin-bottom: 10px;
     font-size: 1rem;
+    font-weight: bold;
     font-family: Georgia, Arial, Helvetica, sans-serif;
   }
 
@@ -150,20 +190,29 @@
   .order-section button {
     border-radius: 8px;
     font-weight: 550;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     padding: 12px;
     font-family: Georgia, Arial, Helvetica, sans-serif;
     background-color: #000000;
-    width:50%;
-    margin-left: 25%;
+    width:100%;
     color: #ffffff;
     border: none;
     cursor: pointer;
+    margin-top: 17vh;
+    margin-bottom: 7vh;
+    transition: background-color 0.3s;
   }
 
   .order-section button:hover{
     background-color: #ffffff;
     color: #000000;
+  }
+
+  .order-section button:active{
+    transform: scale(0.95); /* Slightly shrinks the button */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
+    color: #f7e04e;
+    background-color: #000000;
   }
 
   .bottom-half {

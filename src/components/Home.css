@@ -58,6 +58,13 @@
     padding: 12px;
     border: none;
     margin-top: auto; /* Push button to the bottom of the box */
+    transition: background-color 0.3s;
+  }
+
+  .left-box button:active{
+    transform: scale(0.95); /* Slightly shrinks the button */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
+    background-color: #d4a62f; /* Darker shade of the button’s color */
   }
   /* Responsive adjustments */
 @media (max-width: 867px) { /* For mobile devices */
@@ -143,6 +150,12 @@
   margin-left: 4.7vw;
 }
 
+.top-section button:active{
+    transform: scale(0.95); /* Slightly shrinks the button */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
+    background-color: #d4a62f; /* Darker shade of the button’s color */
+}
+
 /* Bottom of Special Section */
 .bottom-section {
   display: flex;
@@ -196,6 +209,13 @@
   font-family: Georgia, Arial, Helvetica, sans-serif;
   background-color: #f4ce14;
   border: none;
+  transition: background-color 0.3s;
+}
+
+.card-content button:active{
+    transform: scale(0.95); /* Slightly shrinks the button */
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds an inset shadow to simulate being pressed */
+    background-color: #d4a62f; /* Darker shade of the button’s color */
 }
 
 /*testimony section*/
@@ -353,6 +373,8 @@ p {
 
 .home:hover {
   background-color: #d4b70f; /* Darker shade on hover */
+  transition: background-color 0.3s;
+  color: #ffffff;
 }
 
 /* Responsive Styles */
