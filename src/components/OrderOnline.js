@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import './OrderOnline.css';
-import Notification from './Notification'; // Import the Notification component
+import Notification from './Notification'; // Import the Notification component//
+import salad from "../assets/salad.jpg";
+import Bruschetta from "../assets/bruchetta.svg";
+import lemons from "../assets/lemons.jpg";
+import spag from "../assets/spagetti.jpg";
+import pizza from "../assets/pizza3.jpg";
+import lasagna from "../assets/lasagna.jpg";
+import Tiramisu from "../assets/tiramisu.jpg";
+import lemon from "../assets/lemon.png";
+import logo from "../assets/Logo.svg";
+/*when running build with npm start change path to / instead of ../ */
 
 const OrderOnline = () => {
   const menuItems = [
-    { id: 1, name: 'Greek Salad', price: 8.99, image: '/assetsp/salad.jpg' },
-    { id: 2, name: 'Lemon Dessert', price: 10.99, image: '/assetsp/lemons.jpg' },
-    { id: 3, name: 'Bruschetta', price: 7.99, image: '/assetsp/bruchetta.svg' },
-    { id: 4, name: 'Spaghetti & Meatballs', price: 12.99, image: '/assetsp/spagetti.jpg' },
-    { id: 5, name: 'Chicago Pizza', price: 15.99, image: '/assetsp/pizza3.jpg' },
-    { id: 6, name: 'Lasagna', price: 14.99, image: '/assetsp/lasagna.jpg' },
-    { id: 7, name: 'Tiramisu', price: 14.99, image: '/assetsp/tiramisu.jpg' }
+    { id: 1, name: 'Greek Salad', price: 8.99, image: salad },
+    { id: 2, name: 'Lemon Dessert', price: 10.99, image: lemons },
+    { id: 3, name: 'Bruschetta', price: 7.99, image: Bruschetta },
+    { id: 4, name: 'Spaghetti & Meatballs', price: 12.99, image: spag },
+    { id: 5, name: 'Chicago Pizza', price: 15.99, image: pizza },
+    { id: 6, name: 'Lasagna', price: 14.99, image: lasagna },
+    { id: 7, name: 'Tiramisu', price: 14.99, image: Tiramisu }
   ];
 
   const [cart, setCart] = useState([]);
@@ -44,7 +54,7 @@ const OrderOnline = () => {
         <meta name="keywords" content="order online, Little Lemon, food delivery, pickup, restaurant" />
         <meta property="og:title" content="Order Online | Little Lemon Restaurant" />
         <meta property="og:description" content="Order your favorite dishes from Little Lemon Restaurant online. Enjoy convenient delivery and pickup options." />
-        <meta property="og:image" content="/assetsp/logo.svg" />
+        <meta property="og:image" content={logo} />
         <meta property="og:url" content="http://www.littlelemon.com/order-online" />
       </Helmet>
       <div className="order-page">
@@ -67,7 +77,7 @@ const OrderOnline = () => {
 
         <div className='bottom-half'>
           <div className='wholebottombox'>
-            <div className='image1'><img src='assetsp/lemon.png' alt='lemon'/></div>
+            <div className='image1'><img src={lemon} alt='lemon'/></div>
             <section id="order" className="order-section">
               <h2>Order Summary</h2>
 
@@ -104,7 +114,7 @@ const OrderOnline = () => {
                 <button type="submit">Place Order</button>
               </form>
             </section>
-            <div className='image2'><img src='assetsp/lemon.png' alt='lemon'/></div>
+            <div className='image2'><img src = {lemon} alt='lemon'/></div>
           </div>
         </div>
         {showNotification && (

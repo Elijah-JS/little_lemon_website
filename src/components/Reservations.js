@@ -4,6 +4,11 @@ import './Reservations.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Notification from './Notification'; // Import the Notification component
+import lemon from "../assets/lemon.png";
+import image1 from "../assets/last.jpg";
+import image2 from "../assets/new.jpeg";
+import image3 from "../assets/spag.jpg";
+import logo from "../assets/Logo.svg";
 
 const Reservations = () => {
   const [showOccasionMenu, setShowOccasionMenu] = useState(false);
@@ -73,13 +78,13 @@ const Reservations = () => {
         <meta name="keywords" content="reservations, Little Lemon, book a table, dining, restaurant reservations" />
         <meta property="og:title" content="Reservations | Little Lemon Restaurant" />
         <meta property="og:description" content="Make a reservation at Little Lemon Restaurant. Ensure your table is ready for an unforgettable dining experience." />
-        <meta property="og:image" content="/assetsp/logo.svg" />
+        <meta property="og:image" content={logo} />
         <meta property="og:url" content="http://www.littlelemon.com/reservations" />
       </Helmet>
       <div className="reservation-page">
         <div className="top-box">
           <div className='leftrow'>
-            <img src='/assetsp/lemon.png' alt='lemon'/>
+            <img src={lemon} alt='lemon'/>
           </div>
 
           <div className='middlerow'>
@@ -189,14 +194,14 @@ const Reservations = () => {
             </div>
           </div>
           <div className='rightrow'>
-            <img src='/assetsp/lemon.png' alt='lemon'/>
+            <img src={lemon} alt='lemon'/>
           </div>
         </div>
         <div className="bottom">
           <div className="image-row">
-            <img src="/assetsp/last.jpg" alt="Image 1" />
-            <img src="/assetsp/new.jpeg" alt="Image 2" />
-            <img src="/assetsp/spag.jpg" alt="Image 3" />
+            <img src= {image1} alt="Image 1" />
+            <img src={image2} alt="Image 2" />
+            <img src={image3} alt="Image 3" />
           </div>
           <div className="reserve-button-section">
             <button className="reserve-button" onClick={handleReserve}>Reserve a table</button>

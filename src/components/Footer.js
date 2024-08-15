@@ -1,5 +1,7 @@
 import React from 'react';
 import "./Footer.css";
+import insta from "../assets/insta.svg";
+import face from "../assets/R.svg";
 
 const Footer = () => {
   return (
@@ -21,7 +23,7 @@ const Footer = () => {
           aria-label="Follow us on Instagram"
         >
           <img
-            src='/assetsp/insta.svg' // Ensure this path is correct
+            src= {insta} // Ensure this path is correct
             alt="Instagram"
             className="footer-icon"
           />
@@ -33,7 +35,7 @@ const Footer = () => {
           aria-label="Follow us on Facebook"
         >
           <img
-            src='/assetsp/R.svg' // Ensure this path is correct
+            src={face} // Ensure this path is correct
             alt="Facebook"
             className="footer-icon"
           />
