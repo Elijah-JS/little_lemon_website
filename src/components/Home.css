@@ -95,7 +95,7 @@
   }
 
   /* Media Queries for Responsive Design */
-  @media (max-width: 1200px) { /* For tablets and smaller desktops */
+  @media (max-width: 1318px) { /* For tablets and smaller desktops */
     .left-box, .right-box {
       width: 45vw; /* Adjust width for medium screens */
       margin-left: 5vw; /* Reduce left margin */
@@ -285,7 +285,7 @@ p {
   text-align: center; /* Center text inside the card */
   margin: 0; /* Remove default margin */
 }
-@media(max-width: 1104px){
+@media(max-width: 1120px){
 
   .hero-container .left-box{
     margin-left: 20vw;
