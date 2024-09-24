@@ -423,6 +423,70 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 
 /* Existing styles here */
 
+
+@media (max-width:1280px) {
+
+    .leftrow img, .rightrow img {
+      width: 200px; /* Adjust width for tablets */
+      margin: 10px; /* Reduce margin for better spacing */
+    }
+  
+    .title-seating-choice {
+      margin-left: 0; /* Remove margin for better alignment */
+      align-items: center; /* Center-align items */
+    }
+  
+    .top-box {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center-align items */
+    }
+  
+    .radio-buttons {
+      flex-direction: column; /* Stack radio buttons vertically */
+      align-items: center;
+    }
+  
+    .radiobutton {
+      margin-right: 0; /* Remove margin */
+      margin-bottom: 16px; /* Add space between radio buttons */
+    }
+  
+    .dropdowns {
+      margin-left: 0; /* Remove margin */
+    }
+  
+    .top-row-dropdown, .bottom-row-dropdown {
+      flex-direction: column; /* Stack dropdowns vertically */
+      gap: 20px; /* Add spacing between dropdowns */
+    }
+  
+    .dropdown-button {
+      width: 100%; /* Full width for mobile */
+      font-size: 1.2rem; /* Adjust font size */
+      padding: 10px; /* Adjust padding */
+    }
+  
+
+  
+    .reserve-button {
+      width: 90%; /* Full width with margin for mobile */
+      font-size: 1.2rem; /* Adjust font size */
+      padding: 10px; /* Adjust padding */
+      margin: 10px auto; /* Center button with margin */
+    }
+  
+    .reserve-button-section {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center; /* Center-align buttons */
+    }
+  
+    .dropdown-menu, .dinermenus, .timemenus, .dropocassion-menu {
+      width: 100%; /* Full width for dropdown menus */
+    }
+  
+}
+
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {
   .leftrow img, .rightrow img {

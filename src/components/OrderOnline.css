@@ -289,7 +289,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 460px) {
   .order-header h1 {
       font-size: 1.5rem;
   }
@@ -305,10 +305,12 @@
   .order-section input, .order-section button {
       font-size: 0.8rem;
       padding: 8px;
+
   }
 
   .menu-card {
       width: 100%; /* Full width for small screens */
+      max-height: 375px;
       height: auto; /* Allow height to adjust based on content */
   }
 }
