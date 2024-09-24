@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/little_lemon_website/static/css/main.c0e8e4b9.css",
+    "main.js": "/little_lemon_website/static/js/main.d2aa2fdb.js",
+    "static/js/453.75e21181.chunk.js": "/little_lemon_website/static/js/453.75e21181.chunk.js",
+    "static/media/A.jpg": "/little_lemon_website/static/media/A.7f44c6d6e341a27d14b3.jpg",
+    "static/media/bruchetta.svg": "/little_lemon_website/static/media/bruchetta.ec4950d4eabf4293f4120e3b6c48b7cf.svg",
+    "static/media/salad.jpg": "/little_lemon_website/static/media/salad.bed423a1fab5b210e347.jpg",
+    "static/media/heroimg.jpg": "/little_lemon_website/static/media/heroimg.e8abf5b772b6817189aa.jpg",
+    "static/media/new.jpeg": "/little_lemon_website/static/media/new.8c621e4413113cf218df.jpeg",
+    "static/media/lemons.jpg": "/little_lemon_website/static/media/lemons.4185c8e8bb6cd144fee7.jpg",
+    "static/media/pizza3.jpg": "/little_lemon_website/static/media/pizza3.9f0912189fa3f73e30a9.jpg",
+    "static/media/tiramisu.jpg": "/little_lemon_website/static/media/tiramisu.47cf05ad524b5c681625.jpg",
+    "static/media/spagetti.jpg": "/little_lemon_website/static/media/spagetti.f20be9e5c2519153ac43.jpg",
+    "static/media/lasagna.jpg": "/little_lemon_website/static/media/lasagna.8179ca4cdfda2a35d8cb.jpg",
+    "static/media/spag.jpg": "/little_lemon_website/static/media/spag.7c61d3a4aa0ae9d65a32.jpg",
+    "static/media/last.jpg": "/little_lemon_website/static/media/last.eb2f7075de3b1c0cbc35.jpg",
+    "static/media/Logo.svg": "/little_lemon_website/static/media/Logo.fd87fc34e15316b670ea115ce700cd15.svg",
+    "static/media/lemon.png": "/little_lemon_website/static/media/lemon.fecc4c8d86d58c71df9d.png",
+    "static/media/user.png": "/little_lemon_website/static/media/user.2ac8eb5ba4ff09dac815.png",
+    "static/media/star.svg": "/little_lemon_website/static/media/star.a6d8219a2da89c8096f3949ed90c02e1.svg",
+    "static/media/insta.svg": "/little_lemon_website/static/media/insta.de297e727993e1c218ceaffea5cc66e5.svg",
+    "index.html": "/little_lemon_website/index.html",
+    "static/media/R.svg": "/little_lemon_website/static/media/R.09b883fa0cc5468d458c1b369ca067be.svg",
+    "main.c0e8e4b9.css.map": "/little_lemon_website/static/css/main.c0e8e4b9.css.map",
+    "main.d2aa2fdb.js.map": "/little_lemon_website/static/js/main.d2aa2fdb.js.map",
+    "453.75e21181.chunk.js.map": "/little_lemon_website/static/js/453.75e21181.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0e8e4b9.css",
+    "static/js/main.d2aa2fdb.js"
+  ]
+}
