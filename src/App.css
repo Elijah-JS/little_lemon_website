@@ -1,0 +1,87 @@
+/* Premium Little Lemon calendar */
+.ll-calendar {
+  border-radius: 1rem;
+  border: 1px solid #e3ead5;            /* soft olive border */
+  background-color: #fffdf7;            /* warm off-white like the site */
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  padding: 0.75rem 0.75rem 0.9rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Header (month & year) */
+.ll-calendar .react-datepicker__header {
+  background: transparent;
+  border-bottom: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.4rem;
+}
+
+.ll-calendar .react-datepicker__current-month {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1f2933;                        /* deep slate */
+}
+
+/* Weekday labels (M T W etc.) */
+.ll-calendar .react-datepicker__day-name {
+  color: #6b7280;                        /* muted slate */
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+/* Days */
+.ll-calendar .react-datepicker__day {
+  width: 2rem;
+  line-height: 2rem;
+  margin: 0.1rem;
+  border-radius: 999px;                  /* make each day a pill/circle */
+  font-size: 0.75rem;
+  color: #374151;
+}
+
+/* Hover on days */
+.ll-calendar .react-datepicker__day:hover {
+  background-color: #fef3c7;             /* soft warm highlight */
+  color: #111827;
+}
+
+/* Selected day */
+.ll-calendar .react-datepicker__day--selected,
+.ll-calendar .react-datepicker__day--keyboard-selected {
+  background-color: #facc15;             /* lemon yellow */
+  color: #111827;
+  font-weight: 600;
+}
+
+/* Today indicator */
+.ll-calendar .react-datepicker__day--today {
+  border: 1px solid #eab308;             /* subtle lemon ring */
+}
+
+/* Disabled days */
+.ll-calendar .react-datepicker__day--disabled {
+  color: #cbd5f5;
+  opacity: 0.5;
+}
+
+/* Navigation arrows */
+.ll-calendar .react-datepicker__navigation {
+  top: 0.75rem;
+}
+
+.ll-calendar .react-datepicker__navigation--previous,
+.ll-calendar .react-datepicker__navigation--next {
+  border-radius: 999px;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: none;
+}
+
+.ll-calendar .react-datepicker__navigation-icon::before {
+  border-color: #4b5563;                 /* arrow color */
+}
+
+/* Popper (outer container) */
+.ll-calendar-popper {
+  z-index: 50;
+}

@@ -1,185 +1,206 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import "./Home.css"
-import { useNavigate } from 'react-router-dom';
-/*when running build with npm start change path to / instead of ../ */
-import heroimg from "../assets/heroimg.jpg";
-import logo from "../assets/Logo.svg";
-import salad from "../assets/salad.jpg";
-import Bruschetta from "../assets/bruchetta.svg";
-import lemons from "../assets/lemons.jpg";
-import star from "../assets/star.svg";
-import owners from "../assets/A.jpg";
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
+// HERO image – different from the cards
+import heroImg from "../assets/heroimg.jpg";
 
+// Specials card images
+import saladImg from "../assets/salad.jpg";
+import dessertImg from "../assets/lemons.jpg";
+import bruschettaImg from "../assets/bruchetta.svg";
 
+const specials = [
+  {
+    name: "Greek Salad",
+    price: "$8.99",
+    img: saladImg,
+    desc: "Crisp cucumbers, ripe tomatoes, briny feta, and olives with a lemon–herb vinaigrette.",
+  },
+  {
+    name: "Bruschetta",
+    price: "$7.99",
+    img: bruschettaImg,
+    desc: "Toasted sourdough topped with marinated tomatoes, garlic, and fresh basil.",
+  },
+  {
+    name: "Lemon Dessert",
+    price: "$10.99",
+    img: dessertImg,
+    desc: "Our signature lemon dessert with silky custard and a dusting of sugar.",
+  },
+];
 
-const Home = () => {
-
-const navigate = useNavigate();
-
-const handleClick1 = ()=>{
-  navigate("/reservations")
-}
-
-const handleClick2 = ()=>{
-  navigate("/order-online")
-}
-
-  return (
-    <>
-      <Helmet>
-        <title>Home | Little Lemon Restaurant</title>
-        <meta name="description" content="Welcome to Little Lemon Restaurant! Enjoy our delicious dishes, cozy ambiance, and excellent service. Explore our menu and make a reservation today." />
-        <meta name="keywords" content="restaurant, dining, Little Lemon, food, reservation" />
-        <meta property="og:title" content="Home | Little Lemon Restaurant" />
-        <meta property="og:description" content="Welcome to Little Lemon Restaurant! Enjoy our delicious dishes, cozy ambiance, and excellent service. Explore our menu and make a reservation today." />
-        <meta property="og:image" content= {logo} />
-        <meta property="og:url" content="http://www.littlelemon.com" />
-      </Helmet>
-      {/* Page content starts undere here*/}
-      <div className='hero-container '>
-        <div className='left-box'>
-          <h1>Little Lemon</h1>
-          <h3>Chicago</h3>
-          <p>Indulge in the vibrant and aromatic flavors of Mediterranean cuisine right here in Chicago. From zesty lemon-infused dishes to savory classics, our menu celebrates the rich traditions and fresh ingredients of Mediterranean cooking. Join us for an unforgettable dining experience where every meal is a taste of the Mediterranean.</p>
-          <button className='home' onClick={handleClick1}>Reserve a Table</button>
-        </div>
-        <div className='right-box'>
-        <img src={heroimg} alt="Hero image" className="hero-image" />
-
-        </div>
-      </div>
-
-      <div className='specials-section'>
-        <div className='top-section'>
-          <h2>This weeks specials</h2>
-          <button className='home' onClick={handleClick2}>Online Menu</button>
-        </div>
-
-        <div className='bottom-section'>
-
-          <div className="card">
-              <img src={salad} alt="image" className="card-image" />
-              <div className="card-content">
-                <h3 className="card-title">Greek Salad</h3>
-                <p className="card-description">Refreshing salad, made with tomato, lettuce, feta cheese, and olives. Dressed with salt, hot pepper, and olive oil.</p>
-                <button className='home' onClick={handleClick2}>Order for Delivery</button>
-              </div>
-          </div>
-
-          <div className="card">
-              <img src= {Bruschetta} alt="image" className="card-image" />
-              <div className="card-content">
-                <h3 className="card-title">Bruschetta</h3>
-                <p className="card-description">Toasted bread, topped with tomato, prosciutto, and cheese. Seasoned with salt and olive oil.</p>
-                <button className='home' onClick={handleClick2}>Order for Delivery</button>
-              </div>
-          </div>
-
-          <div className="card">
-              <img src={lemons} alt="image" className="card-image" />
-              <div className="card-content">
-                <h3 className="card-title">Lemon Dessert</h3>
-                <p className="card-description">A buttery shortbread base layered with a silky lemon curd, topped with a fresh lemon slice.</p>
-                <button className='home' onClick={handleClick2}>Order for Delivery</button>
-              </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div className='Testimonials-sections' id='baby'>
-        <div className='testimony-title'> Testimonials</div>
-        <div className='top-row'>
-
-          <div className='top1stbox'>
-
-            <img src ={star} alt='star-icon' className='star-image'/>
-            <p className='name'> Micheal Caldwell </p>
-            <p>This is the best Mediterranean food that I've ever had! </p>
-
-          </div>
-
-          <div className='top2ndbox'>
-
-            <img src={star} alt='star-icon' className='star-image'/>
-            <p className='name'>Alan Chen </p>
-            <p>My Shiba Inu, Mugi really loved the cozy vibes and delicious food here. </p>
-
-          </div>
-
-          <div className='top3rdbox'>
-
-            <img src={star} alt='star-icon' className='star-image'/>
-            <p className='name'>Casey Lau</p>
-            <p>I've had some great Mediterranean food before, but none of them beats Little Lemon in flavor and texture. </p>
-
-          </div>
-
-          <div className='top4thbox'>
-
-            <img src= {star} alt='star-icon' className='star-image'/>
-            <p className='name'> John Rosenblum</p>
-            <p>Great food, working staff, cozy atmosphere. A great place to treat your kids to.</p>
-
-          </div>
-
-        </div>
-
-        <div className='bottom-row'>
-
-          <div className='bot1stbox'>
-
-            <img src= {star} alt='star-icon' className='star-image'/>
-            <p className='name'>Brian Dean </p>
-            <p> The food here really refreshed me after a late night shift at the socal supply depot.</p>
-
-          </div>
-
-          <div className='bot2ndbox'>
-
-            <img src= {star} alt='star-icon' className='star-image'/>
-            <p className='name'> Tyler Tohmine</p>
-            <p>I came to little Lemon after a 5 hour flight from the East Coast. The food here tasted so delicious after the trip here.</p>
-
-          </div>
-
-          <div className='bot3rdbox'>
-
-            <img src= {star} alt='star-icon' className='star-image'/>
-            <p className='name'>Jack Hu </p>
-            <p>This restaurant served as a perfect dinner for me after a long night of studying. I would definitely order from here again!</p>
-
-          </div>
-
-          <div className='bot4thbox'>
-
-            <img src= {star} alt='star-icon' className='star-image'/>
-            <p className='name'>Jim Reynor </p>
-            <p>The food here was fire!! Everyone should try this place out at least once if they live in Chicago.</p>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-      <div className='about-us'>
-        <div className='leftside'>
-          <h1>Little Lemon</h1>
-          <h3>Chicago</h3>
-          <p>For over 30 years, we’ve been sharing our passion for Italian cooking right here in Chicago. Our kitchen is more than just a place where we cook—it’s where our family traditions come to life. Each dish is made with the same care and love that Mario and Adrian bring to their own family meals. We’re all about using the freshest ingredients and classic recipes to create a warm, inviting dining experience that feels just like home. Come on in and be a part of our extended family—we can’t wait to share our table with you!</p>
-        </div>
-        <div className='right-ide'>
-          <img src={owners} alt='image of owners' />
-        </div>
-      </div>
-    </>
-  );
+// Simple variants for animations
+const heroVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
 };
 
-export default Home;
+const heroImageVariants = {
+  hidden: { opacity: 0, x: 32 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const specialsHeaderVariants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.05 * i },
+  }),
+};
+
+export default function Home() {
+  return (
+    <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6">
+      {/* HERO */}
+      <motion.section
+        className="relative rounded-[32px] bg-white/95 px-6 py-8 shadow-soft md:px-10 md:py-9"
+        initial="hidden"
+        animate="visible"
+        variants={heroVariants}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <div className="grid gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+          {/* LEFT */}
+          <div className="flex flex-col gap-5">
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-olive-600/80">
+              Mediterranean • Little Lemon
+            </p>
+
+            <h1 className="font-display text-3xl font-semibold leading-tight text-slate-900 md:text-[2.4rem]">
+              A bright corner of the Mediterranean in Chicago.
+            </h1>
+
+            <p className="max-w-xl text-sm leading-relaxed text-slate-600 md:text-[0.95rem]">
+              Little Lemon serves seasonal, citrus-forward dishes, handmade pastas, and cozy
+              classics inspired by Mediterranean family recipes. Fresh, simple, and meant to be
+              shared.
+            </p>
+
+            <div className="mt-1 flex flex-wrap items-center gap-4">
+              <Link
+                to="/reservations"
+                className="rounded-full bg-lemon-400 px-6 py-2.5 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-lemon-300"
+              >
+                Reserve a table
+              </Link>
+
+              <Link
+                to="/order-online"
+                className="rounded-full border border-olive-100 bg-white px-6 py-2.5 text-sm font-medium text-slate-700 transition hover:border-lemon-300 hover:bg-lemon-50"
+              >
+                Order online
+              </Link>
+
+              <p className="text-xs text-slate-500 md:text-[0.8rem]">
+                Open today • <span className="font-semibold">11:00am – 11:00pm</span>
+              </p>
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <motion.div
+            className="relative"
+            variants={heroImageVariants}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+          >
+            <div className="absolute inset-0 -z-10 translate-y-3 translate-x-3 rounded-[28px] bg-lemon-300/35 blur-xl" />
+            <div className="overflow-hidden rounded-[28px] border border-olive-100/60 bg-slate-900/5 shadow-soft">
+              <img
+                src={heroImg}
+                alt="Little Lemon Restaurant"
+                className="h-64 w-full object-cover md:h-72 lg:h-80"
+              />
+            </div>
+
+            <div className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-white/90 px-4 py-3 text-xs text-slate-800 shadow-soft">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-lemon-400 text-xs font-bold text-slate-900">
+                4.8
+              </div>
+              <div>
+                <p className="font-semibold">Loved by locals</p>
+                <p className="text-[0.7rem] text-slate-500">2k+ reviews across Chicago</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* SPECIALS */}
+      <motion.section
+        className="mt-12 md:mt-14"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={specialsHeaderVariants}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+      >
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-olive-600/80">
+              This week&apos;s specials
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-semibold text-slate-900 md:text-[1.6rem]">
+              Seasonal plates, fresh from our kitchen
+            </h2>
+          </div>
+
+          <Link
+            to="/order-online"
+            className="rounded-full border border-lemon-300/70 bg-lemon-50 px-4 py-2 text-xs font-medium text-olive-800 transition hover:bg-lemon-300 hover:text-slate-900"
+          >
+            View full menu
+          </Link>
+        </div>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {specials.map((item, index) => (
+            <motion.article
+              key={item.name}
+              className="group flex flex-col overflow-hidden rounded-2xl border border-olive-100 bg-white/95 shadow-soft transition hover:-translate-y-1 hover:border-lemon-300"
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.25 }}
+              variants={cardVariants}
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="h-40 w-full object-cover transition duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-1 flex-col gap-3 p-4">
+                <div className="flex items-center justify-between gap-2">
+                  <h3 className="font-display text-lg font-semibold text-slate-900">
+                    {item.name}
+                  </h3>
+                  <span className="text-sm font-semibold text-olive-700">
+                    {item.price}
+                  </span>
+                </div>
+                <p className="text-xs leading-relaxed text-slate-600">{item.desc}</p>
+                <button className="mt-2 inline-flex items-center justify-center rounded-full bg-olive-800 px-4 py-2 text-xs font-semibold text-lemon-50 transition hover:bg-olive-600">
+                  Add to cart
+                </button>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </motion.section>
+    </main>
+  );
+}
+
+
+
+
 
