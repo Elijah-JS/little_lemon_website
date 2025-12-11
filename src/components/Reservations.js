@@ -89,6 +89,198 @@ const FancySelect = ({ label, placeholder, value, onChange, options }) => {
   );
 };
 
+/* Shared reservation form for mobile + desktop */
+const ReservationForm = ({
+  seating,
+  setSeating,
+  date,
+  setDate,
+  diners,
+  setDiners,
+  occasion,
+  setOccasion,
+  time,
+  setTime,
+  handleReserve,
+  dinerOptions,
+  occasionOptions,
+  timeOptions,
+  className = "",
+}) => {
+  return (
+    <form className={className} onSubmit={handleReserve}>
+      {/* Seating preference */}
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive-700/80">
+          Seating preference
+        </p>
+
+        <div className="mt-3 grid gap-3 md:grid-cols-2">
+          {/* INDOOR BUTTON */}
+          <button
+            type="button"
+            onClick={() => setSeating("indoor")}
+            className="
+              flex items-center justify-between rounded-2xl px-4 py-3 text-sm shadow-sm transition
+              bg-olive-50 text-slate-800 hover:bg-olive-100
+            "
+          >
+            <span>Indoor seating</span>
+            <span
+              className={`
+                h-4 w-4 rounded-full border
+                ${
+                  seating === "indoor"
+                    ? "bg-black border-black"
+                    : "bg-white border-olive-300"
+                }
+              `}
+            />
+          </button>
+
+          {/* OUTDOOR BUTTON */}
+          <button
+            type="button"
+            onClick={() => setSeating("outdoor")}
+            className="
+              flex items-center justify-between rounded-2xl px-4 py-3 text-sm shadow-sm transition
+              bg-olive-50 text-slate-800 hover:bg-olive-100
+            "
+          >
+            <span>Outdoor seating</span>
+            <span
+              className={`
+                h-4 w-4 rounded-full border
+                ${
+                  seating === "outdoor"
+                    ? "bg-black border-black"
+                    : "bg-white border-olive-300"
+                }
+              `}
+            />
+          </button>
+        </div>
+      </div>
+
+      {/* Date + Diners */}
+      <div className="grid gap-4 md:grid-cols-2">
+        {/* Date */}
+        <div>
+          <label className="mb-1 block text-xs font-medium text-slate-600">
+            Select a date
+          </label>
+          <DatePicker
+            selected={date}
+            onChange={(d) => setDate(d)}
+            dateFormat="MM/dd/yyyy"
+            minDate={new Date()}
+            placeholderText="Choose a date"
+            className="
+              w-full rounded-full border border-olive-100 bg-olive-50/60 
+              px-4 py-2.5 text-sm text-slate-800 shadow-sm 
+              focus:border-lemon-300 focus:outline-none 
+              focus:ring-1 focus:ring-lemon-300
+            "
+            calendarClassName="ll-calendar"
+            popperClassName="ll-calendar-popper"
+          />
+        </div>
+
+        {/* Diners – FancySelect */}
+        <FancySelect
+          label="Number of guests"
+          placeholder="Select diners"
+          value={diners}
+          onChange={setDiners}
+          options={dinerOptions}
+        />
+      </div>
+
+      {/* Occasion + Time */}
+      <div className="grid gap-4 md:grid-cols-2">
+        <FancySelect
+          label="Occasion"
+          placeholder="Select occasion"
+          value={occasion}
+          onChange={setOccasion}
+          options={occasionOptions}
+        />
+
+        <FancySelect
+          label="Time"
+          placeholder="Select a time"
+          value={time}
+          onChange={setTime}
+          options={timeOptions}
+        />
+      </div>
+
+      {/* Button + tiny copy */}
+      <div className="pt-2">
+        <button
+          type="submit"
+          className="inline-flex w-full items-center justify-center rounded-full bg-lemon-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-lemon-300"
+        >
+          Reserve a table
+        </button>
+        <p className="mt-2 text-[0.7rem] text-slate-500">
+          You&apos;ll receive a confirmation at the host stand when you arrive.
+        </p>
+      </div>
+    </form>
+  );
+};
+
+/* Shared imagery / story block */
+const ReservationImagery = () => {
+  return (
+    <div className="space-y-4">
+      <div className="relative overflow-hidden rounded-2xl border border-olive-100/70 bg-slate-950/80 shadow-soft">
+        <img
+          src={image1}
+          alt="Chefs preparing dishes"
+          className="h-52 w-full object-cover md:h-56"
+        />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent px-4 pb-4 pt-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lemon-200/90">
+            Chef&apos;s table
+          </p>
+          <p className="mt-1 text-sm font-medium text-lemon-50">
+            Watch our team finish your dishes from the open kitchen.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-3">
+        <div className="overflow-hidden rounded-2xl border border-olive-100/70 bg-slate-900/80">
+          <img
+            src={image2}
+            alt="Colorful Mediterranean spread"
+            className="h-28 w-full object-cover md:h-32"
+          />
+        </div>
+        <div className="overflow-hidden rounded-2xl border border-olive-100/70 bg-slate-900/80">
+          <img
+            src={image3}
+            alt="Pasta dish"
+            className="h-28 w-full object-cover md:h-32"
+          />
+        </div>
+      </div>
+
+      <div className="rounded-2xl border border-lemon-100 bg-lemon-50/70 px-4 py-4 text-xs text-olive-900 shadow-soft">
+        <p className="font-semibold text-slate-900">
+          Need a last-minute reservation?
+        </p>
+        <p className="mt-1 text-[0.75rem] text-slate-700 leading-relaxed">
+          Call us at <span className="font-semibold">(312) 555-0134</span> and
+          we&apos;ll do our best to find you a spot this evening.
+        </p>
+      </div>
+    </div>
+  );
+};
+
 const Reservations = () => {
   const [seating, setSeating] = useState("indoor");
   const [date, setDate] = useState(null);
@@ -163,7 +355,10 @@ const Reservations = () => {
           name="keywords"
           content="reservations, Little Lemon, book a table, dining, restaurant reservations"
         />
-        <meta property="og:title" content="Reservations | Little Lemon Restaurant" />
+        <meta
+          property="og:title"
+          content="Reservations | Little Lemon Restaurant"
+        />
         <meta
           property="og:description"
           content="Reserve a table at Little Lemon in Chicago. Choose your date, time, and seating preference."
@@ -198,186 +393,63 @@ const Reservations = () => {
           </div>
         </header>
 
-        {/* Main layout card */}
-        <div className="grid gap-8 rounded-3xl bg-[#fffdf7]/95 p-6 shadow-soft md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:p-8">
+        {/* ======================= */}
+        {/* MOBILE LAYOUT (md:hidden) */}
+        {/* ======================= */}
+        <section className="mt-4 space-y-6 md:hidden">
+          {/* Card with form */}
+          <div className="rounded-3xl bg-[#fffdf7]/95 p-5 shadow-soft">
+            <ReservationForm
+              seating={seating}
+              setSeating={setSeating}
+              date={date}
+              setDate={setDate}
+              diners={diners}
+              setDiners={setDiners}
+              occasion={occasion}
+              setOccasion={setOccasion}
+              time={time}
+              setTime={setTime}
+              handleReserve={handleReserve}
+              dinerOptions={dinerOptions}
+              occasionOptions={occasionOptions}
+              timeOptions={timeOptions}
+              className="space-y-6"
+            />
+          </div>
+
+          {/* Imagery below form on mobile */}
+          <ReservationImagery />
+        </section>
+
+        {/* ========================= */}
+        {/* DESKTOP/TABLET LAYOUT     */}
+        {/* ========================= */}
+        <section className="mt-8 hidden gap-8 rounded-3xl bg-[#fffdf7]/95 p-6 shadow-soft md:grid md:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] md:p-8">
           {/* LEFT — FORM */}
-          <form
-            className="space-y-6 border-r border-olive-100/60 pr-0 md:pr-8"
-            onSubmit={handleReserve}
-          >
-{/* Seating preference */}
-<div>
-  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-olive-700/80">
-    Seating preference
-  </p>
-
-  <div className="mt-3 grid gap-3 md:grid-cols-2">
-    {/* INDOOR BUTTON */}
-    <button
-      type="button"
-      onClick={() => setSeating("indoor")}
-      className={`
-        flex items-center justify-between rounded-2xl px-4 py-3 text-sm shadow-sm transition
-        bg-olive-50 text-slate-800 hover:bg-olive-100
-      `}
-    >
-      <span>Indoor seating</span>
-
-      {/* Black circle when selected, white when not */}
-      <span
-        className={`
-          h-4 w-4 rounded-full border
-          ${seating === "indoor"
-            ? "bg-black border-black"
-            : "bg-white border-olive-300"
-          }
-        `}
-      />
-    </button>
-
-    {/* OUTDOOR BUTTON */}
-    <button
-      type="button"
-      onClick={() => setSeating("outdoor")}
-      className={`
-        flex items-center justify-between rounded-2xl px-4 py-3 text-sm shadow-sm transition
-        bg-olive-50 text-slate-800 hover:bg-olive-100
-      `}
-    >
-      <span>Outdoor seating</span>
-
-      <span
-        className={`
-          h-4 w-4 rounded-full border
-          ${seating === "outdoor"
-            ? "bg-black border-black"
-            : "bg-white border-olive-300"
-          }
-        `}
-      />
-    </button>
-  </div>
-</div>
-
-
-
-
-
-            {/* Date + Diners */}
-            <div className="grid gap-4 md:grid-cols-2">
-              {/* Date */}
-              <div>
-                <label className="mb-1 block text-xs font-medium text-slate-600">
-                  Select a date
-                </label>
-                <DatePicker
-  selected={date}
-  onChange={(d) => setDate(d)}
-  dateFormat="MM/dd/yyyy"
-  minDate={new Date()}
-  placeholderText="Choose a date"
-  className="
-    w-full rounded-full border border-olive-100 bg-olive-50/60 
-    px-4 py-2.5 text-sm text-slate-800 shadow-sm 
-    focus:border-lemon-300 focus:outline-none 
-    focus:ring-1 focus:ring-lemon-300
-  "
-  calendarClassName="ll-calendar"
-  popperClassName="ll-calendar-popper"
-/>
-
-              </div>
-
-              {/* Diners – FancySelect */}
-              <FancySelect
-                label="Number of guests"
-                placeholder="Select diners"
-                value={diners}
-                onChange={setDiners}
-                options={dinerOptions}
-              />
-            </div>
-
-            {/* Occasion + Time */}
-            <div className="grid gap-4 md:grid-cols-2">
-              <FancySelect
-                label="Occasion"
-                placeholder="Select occasion"
-                value={occasion}
-                onChange={setOccasion}
-                options={occasionOptions}
-              />
-
-              <FancySelect
-                label="Time"
-                placeholder="Select a time"
-                value={time}
-                onChange={setTime}
-                options={timeOptions}
-              />
-            </div>
-
-            {/* Button + tiny copy */}
-            <div className="pt-2">
-              <button
-                type="submit"
-                className="inline-flex w-full items-center justify-center rounded-full bg-lemon-400 px-6 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-lemon-300"
-              >
-                Reserve a table
-              </button>
-              <p className="mt-2 text-[0.7rem] text-slate-500">
-                You&apos;ll receive a confirmation at the host stand when you
-                arrive.
-              </p>
-            </div>
-          </form>
+          <div className="border-r border-olive-100/60 pr-0 md:pr-8">
+            <ReservationForm
+              seating={seating}
+              setSeating={setSeating}
+              date={date}
+              setDate={setDate}
+              diners={diners}
+              setDiners={setDiners}
+              occasion={occasion}
+              setOccasion={setOccasion}
+              time={time}
+              setTime={setTime}
+              handleReserve={handleReserve}
+              dinerOptions={dinerOptions}
+              occasionOptions={occasionOptions}
+              timeOptions={timeOptions}
+              className="space-y-6"
+            />
+          </div>
 
           {/* RIGHT — IMAGERY / STORY */}
-          <div className="space-y-4">
-            <div className="relative overflow-hidden rounded-2xl border border-olive-100/70 bg-slate-950/80 shadow-soft">
-              <img
-                src={image1}
-                alt="Chefs preparing dishes"
-                className="h-52 w-full object-cover md:h-56"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent px-4 pb-4 pt-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lemon-200/90">
-                  Chef&apos;s table
-                </p>
-                <p className="mt-1 text-sm font-medium text-lemon-50">
-                  Watch our team finish your dishes from the open kitchen.
-                </p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
-              <div className="overflow-hidden rounded-2xl border border-olive-100/70 bg-slate-900/80">
-                <img
-                  src={image2}
-                  alt="Colorful Mediterranean spread"
-                  className="h-28 w-full object-cover md:h-32"
-                />
-              </div>
-              <div className="overflow-hidden rounded-2xl border border-olive-100/70 bg-slate-900/80">
-                <img
-                  src={image3}
-                  alt="Pasta dish"
-                  className="h-28 w-full object-cover md:h-32"
-                />
-              </div>
-            </div>
-
-            <div className="rounded-2xl border border-lemon-100 bg-lemon-50/70 px-4 py-4 text-xs text-olive-900 shadow-soft">
-              <p className="font-semibold text-slate-900">
-                Need a last-minute reservation?
-              </p>
-              <p className="mt-1 text-[0.75rem] text-slate-700 leading-relaxed">
-                Call us at <span className="font-semibold">(312) 555-0134</span>{" "}
-                and we&apos;ll do our best to find you a spot this evening.
-              </p>
-            </div>
-          </div>
-        </div>
+          <ReservationImagery />
+        </section>
       </section>
 
       {showNotification && (
@@ -399,6 +471,7 @@ const Reservations = () => {
 };
 
 export default Reservations;
+
 
 
 

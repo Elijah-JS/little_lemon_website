@@ -71,6 +71,152 @@ const menuItems = [
   },
 ];
 
+// Reusable checkout panel for both mobile + desktop
+function CheckoutPanel({
+  cart,
+  name,
+  address,
+  totalAmount,
+  setName,
+  setAddress,
+  handleOrderSubmit,
+  decreaseQuantity,
+  removeItem,
+  setCart,
+}) {
+  return (
+    <div className="rounded-[24px] bg-white/95 p-5 shadow-soft">
+      <h2 className="font-display text-lg font-semibold text-slate-900">
+        Checkout details
+      </h2>
+
+      {/* Cart summary */}
+      <div className="mt-4 rounded-2xl bg-[#fffdf7] p-3 border border-olive-100/80">
+        <p className="text-[0.75rem] font-semibold text-slate-700">Your order</p>
+        {cart.length === 0 ? (
+          <p className="mt-2 text-[0.75rem] text-slate-500">
+            No items yet. Add a few dishes from the menu.
+          </p>
+        ) : (
+          <ul className="mt-2 space-y-2 text-[0.75rem] text-slate-700">
+            {cart.map((item) => (
+              <li
+                key={item.id}
+                className="flex items-center justify-between gap-2"
+              >
+                <div className="flex flex-col">
+                  <span className="font-medium">{item.name}</span>
+                  <span className="text-[0.7rem] text-slate-500">
+                    {item.quantity} × ${item.price.toFixed(2)}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center rounded-full border border-olive-100 bg-white">
+                    <button
+                      type="button"
+                      onClick={() => decreaseQuantity(item.id)}
+                      className="px-2 py-1 text-[0.7rem] font-bold text-olive-800 hover:bg-lemon-50 rounded-l-full"
+                    >
+                      −
+                    </button>
+                    <span className="px-2 text-[0.75rem]">
+                      {item.quantity}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setCart((prev) =>
+                          prev.map((entry) =>
+                            entry.id === item.id
+                              ? { ...entry, quantity: entry.quantity + 1 }
+                              : entry
+                          )
+                        )
+                      }
+                      className="px-2 py-1 text-[0.7rem] font-bold text-olive-800 hover:bg-lemon-50 rounded-r-full"
+                    >
+                      +
+                    </button>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => removeItem(item.id)}
+                    className="text-[0.7rem] text-slate-400 hover:text-red-500"
+                  >
+                    Remove
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+        <div className="mt-3 flex items-center justify-between border-t border-olive-100 pt-2 text-[0.8rem]">
+          <span className="font-semibold text-slate-800">Total</span>
+          <span className="font-semibold text-olive-800">${totalAmount}</span>
+        </div>
+      </div>
+
+      {/* Checkout form */}
+      <form onSubmit={handleOrderSubmit} className="mt-5 space-y-3">
+        <div className="space-y-1">
+          <label className="block text-[0.75rem] font-medium text-slate-700">
+            Name
+          </label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+            className="w-full rounded-full border border-olive-100 bg-[#fffdf7] px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-lemon-300 focus:ring-2 focus:ring-lemon-200/70"
+            placeholder="Enter your name"
+          />
+        </div>
+
+        <div className="space-y-1">
+          <label className="block text-[0.75rem] font-medium text-slate-700">
+            Delivery address
+          </label>
+          <input
+            type="text"
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+            required
+            className="w-full rounded-full border border-olive-100 bg-[#fffdf7] px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-lemon-300 focus:ring-2 focus:ring-lemon-200/70"
+            placeholder="Street, city, ZIP"
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={!cart.length}
+          className={`mt-2 w-full rounded-full px-4 py-2.5 text-sm font-semibold shadow-soft transition ${
+            cart.length
+              ? "bg-slate-900 text-lemon-50 hover:bg-slate-800"
+              : "cursor-not-allowed bg-slate-200 text-slate-500"
+          }`}
+        >
+          Place order
+        </button>
+      </form>
+    </div>
+  );
+}
+
+function DeliveryNotes() {
+  return (
+    <div className="rounded-[20px] border border-lemon-100 bg-lemon-50/60 px-4 py-3 text-[0.75rem] text-olive-900 shadow-soft">
+      <p className="font-semibold">Delivery notes</p>
+      <p className="mt-1">
+        We carefully package all dishes to arrive warm and fresh. For allergies or
+        special instructions, add a note at checkout or call us after placing your
+        order.
+      </p>
+    </div>
+  );
+}
+
 const OrderOnline = () => {
   // cart = [{ id, name, price, quantity }]
   const [cart, setCart] = useState([]);
@@ -88,7 +234,10 @@ const OrderOnline = () => {
             : entry
         );
       }
-      return [...prev, { id: item.id, name: item.name, price: item.price, quantity: 1 }];
+      return [
+        ...prev,
+        { id: item.id, name: item.name, price: item.price, quantity: 1 },
+      ];
     });
   };
 
@@ -136,18 +285,24 @@ const OrderOnline = () => {
           name="keywords"
           content="order online, Little Lemon, food delivery, pickup, restaurant"
         />
-        <meta property="og:title" content="Order Online | Little Lemon Restaurant" />
+        <meta
+          property="og:title"
+          content="Order Online | Little Lemon Restaurant"
+        />
         <meta
           property="og:description"
           content="Order your favorite dishes from Little Lemon Restaurant online. Enjoy convenient delivery and pickup options."
         />
         <meta property="og:image" content={logo} />
-        <meta property="og:url" content="http://www.littlelemon.com/order-online" />
+        <meta
+          property="og:url"
+          content="http://www.littlelemon.com/order-online"
+        />
       </Helmet>
 
-      <main className="mx-auto max-w-6xl px-4 pb-16 pt-10 md:px-6">
+      <main className="mx-auto max-w-6xl px-4 pb-16 pt-8 md:pt-10 md:px-6">
         {/* PAGE HEADER */}
-        <header className="mb-8 flex flex-wrap items-end justify-between gap-4">
+        <header className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-lemon-300 shadow-soft">
               <img
@@ -160,28 +315,110 @@ const OrderOnline = () => {
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-olive-600/80">
                 Little Lemon • Chicago
               </p>
-              <h1 className="font-display text-2xl font-semibold text-slate-900 md:text-[1.7rem]">
+              <h1 className="font-display text-xl font-semibold text-slate-900 md:text-[1.7rem]">
                 Order online
               </h1>
-              <p className="text-xs text-slate-500 md:text-[0.8rem]">
+              <p className="text-[0.75rem] text-slate-500 md:text-[0.8rem]">
                 Freshly prepared dishes, ready for pickup or delivery.
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col items-end text-xs text-slate-500">
-            <span className="rounded-full bg-white/70 px-4 py-1 shadow-soft">
+          <div className="flex flex-col items-end text-[0.7rem] text-slate-500">
+            <span className="rounded-full bg-white/80 px-4 py-1 shadow-soft">
               Open today • <span className="font-semibold">11:00am – 11:00pm</span>
             </span>
-            <span className="mt-2 text-[0.7rem]">
-              Average prep time: <span className="font-medium">20–25 minutes</span>
+            <span className="mt-1">
+              Average prep time:{" "}
+              <span className="font-medium">20–25 minutes</span>
             </span>
           </div>
         </header>
 
-        {/* LAYOUT: MENU GALLERY + CHECKOUT */}
-        <section className="grid gap-8 lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)]">
-          {/* MENU GALLERY */}
+        {/* ======================= */}
+        {/* MOBILE LAYOUT (md:hidden) */}
+        {/* ======================= */}
+        <section className="mt-4 flex flex-col gap-6 md:hidden">
+          {/* Mobile menu list */}
+          <div className="rounded-[22px] bg-white/95 p-4 shadow-soft">
+            <div className="mb-3 flex items-center justify-between gap-2">
+              <div>
+                <h2 className="font-display text-[1rem] font-semibold text-slate-900">
+                  Menu
+                </h2>
+                <p className="text-[0.7rem] text-slate-500">
+                  Tap a dish to add it to your order.
+                </p>
+              </div>
+              <span className="rounded-full bg-lemon-50 px-3 py-1 text-[0.7rem] font-medium text-olive-800 border border-lemon-200">
+                {menuItems.length} items
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              {menuItems.map((item) => (
+                <article
+                  key={item.id}
+                  className="flex items-stretch gap-3 rounded-2xl bg-[#fffdf7] p-3 border border-olive-100/80 shadow-soft"
+                >
+                  <div className="h-20 w-20 flex-shrink-0 overflow-hidden rounded-xl border border-olive-100/70">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col justify-between gap-1">
+                    <div className="flex items-start justify-between gap-2">
+                      <div>
+                        <h3 className="font-display text-[0.9rem] font-semibold text-slate-900">
+                          {item.name}
+                        </h3>
+                        <span className="mt-0.5 inline-flex rounded-full bg-lemon-50 px-2 py-0.5 text-[0.65rem] font-medium text-olive-800 border border-lemon-100">
+                          {item.tag}
+                        </span>
+                      </div>
+                      <span className="text-[0.8rem] font-semibold text-olive-800">
+                        ${item.price.toFixed(2)}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-[0.72rem] leading-snug text-slate-600">
+                      {item.desc}
+                    </p>
+                    <button
+                      onClick={() => addToCart(item)}
+                      className="mt-2 inline-flex items-center justify-center rounded-full bg-lemon-300 px-4 py-1.5 text-[0.75rem] font-semibold text-olive-900 shadow-soft transition hover:bg-lemon-400"
+                    >
+                      Add to order
+                    </button>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile checkout below menu */}
+          <CheckoutPanel
+            cart={cart}
+            name={name}
+            address={address}
+            totalAmount={totalAmount}
+            setName={setName}
+            setAddress={setAddress}
+            handleOrderSubmit={handleOrderSubmit}
+            decreaseQuantity={decreaseQuantity}
+            removeItem={removeItem}
+            setCart={setCart}
+          />
+
+          <DeliveryNotes />
+        </section>
+
+        {/* ========================= */}
+        {/* DESKTOP/TABLET LAYOUT     */}
+        {/* ========================= */}
+        <section className="mt-6 hidden gap-8 lg:grid lg:grid-cols-[minmax(0,2.1fr)_minmax(0,1.3fr)] md:block md:gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)]">
+          {/* MENU GALLERY – desktop/tablet */}
           <div className="rounded-[24px] bg-white/95 p-4 shadow-soft md:p-5">
             <div className="mb-4 flex items-center justify-between gap-2">
               <div>
@@ -226,16 +463,12 @@ const OrderOnline = () => {
                       <p className="text-[0.75rem] leading-relaxed text-slate-600">
                         {item.desc}
                       </p>
-                     <button
-  onClick={() => addToCart(item)}
-  className="mt-3 inline-flex items-center justify-center rounded-full
-             bg-lemon-300 px-4 py-2 text-[0.8rem] font-semibold
-             text-olive-900 shadow-md transition
-             hover:bg-lemon-400 hover:shadow-lg"
->
-  Add to order
-</button>
-
+                      <button
+                        onClick={() => addToCart(item)}
+                        className="mt-3 inline-flex items-center justify-center rounded-full bg-lemon-300 px-4 py-2 text-[0.8rem] font-semibold text-olive-900 shadow-md transition hover:bg-lemon-400 hover:shadow-lg"
+                      >
+                        Add to order
+                      </button>
                     </div>
                   </article>
                 ))}
@@ -243,142 +476,21 @@ const OrderOnline = () => {
             </div>
           </div>
 
-          {/* CHECKOUT PANEL */}
+          {/* CHECKOUT + NOTES – desktop/tablet */}
           <aside className="flex flex-col gap-4">
-            <div className="rounded-[24px] bg-white/95 p-5 shadow-soft">
-              <h2 className="font-display text-lg font-semibold text-slate-900">
-                Checkout details
-              </h2>
-
-              {/* Cart summary */}
-              <div className="mt-4 rounded-2xl bg-[#fffdf7] p-3 border border-olive-100/80">
-                <p className="text-[0.75rem] font-semibold text-slate-700">
-                  Your order
-                </p>
-                {cart.length === 0 ? (
-                  <p className="mt-2 text-[0.75rem] text-slate-500">
-                    No items yet. Add a few dishes from the menu.
-                  </p>
-                ) : (
-                  <ul className="mt-2 space-y-2 text-[0.75rem] text-slate-700">
-                    {cart.map((item) => (
-                      <li
-                        key={item.id}
-                        className="flex items-center justify-between gap-2"
-                      >
-                        <div className="flex flex-col">
-                          <span className="font-medium">{item.name}</span>
-                          <span className="text-[0.7rem] text-slate-500">
-                            {item.quantity} × ${item.price.toFixed(2)}
-                          </span>
-                        </div>
-
-                        <div className="flex items-center gap-2">
-                          <div className="flex items-center rounded-full border border-olive-100 bg-white">
-                            <button
-                              type="button"
-                              onClick={() => decreaseQuantity(item.id)}
-                              className="px-2 py-1 text-[0.7rem] font-bold text-olive-800 hover:bg-lemon-50 rounded-l-full"
-                            >
-                              −
-                            </button>
-                            <span className="px-2 text-[0.75rem]">
-                              {item.quantity}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() =>
-                                setCart((prev) =>
-                                  prev.map((entry) =>
-                                    entry.id === item.id
-                                      ? { ...entry, quantity: entry.quantity + 1 }
-                                      : entry
-                                  )
-                                )
-                              }
-                              className="px-2 py-1 text-[0.7rem] font-bold text-olive-800 hover:bg-lemon-50 rounded-r-full"
-                            >
-                              +
-                            </button>
-                          </div>
-
-                          <button
-                            type="button"
-                            onClick={() => removeItem(item.id)}
-                            className="text-[0.7rem] text-slate-400 hover:text-red-500"
-                          >
-                            Remove
-                          </button>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                <div className="mt-3 flex items-center justify-between border-t border-olive-100 pt-2 text-[0.8rem]">
-                  <span className="font-semibold text-slate-800">Total</span>
-                  <span className="font-semibold text-olive-800">
-                    ${totalAmount}
-                  </span>
-                </div>
-              </div>
-
-              {/* Checkout form */}
-              <form onSubmit={handleOrderSubmit} className="mt-5 space-y-3">
-                <div className="space-y-1">
-                  <label className="block text-[0.75rem] font-medium text-slate-700">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                    className="w-full rounded-full border border-olive-100 bg-[#fffdf7] px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-lemon-300 focus:ring-2 focus:ring-lemon-200/70"
-                    placeholder="Enter your name"
-                  />
-                </div>
-
-                <div className="space-y-1">
-                  <label className="block text-[0.75rem] font-medium text-slate-700">
-                    Delivery address
-                  </label>
-                  <input
-                    type="text"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                    required
-                    className="w-full rounded-full border border-olive-100 bg-[#fffdf7] px-4 py-2.5 text-sm text-slate-900 outline-none transition focus:border-lemon-300 focus:ring-2 focus:ring-lemon-200/70"
-                    placeholder="Street, city, ZIP"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={!cart.length}
-                  className={`mt-2 w-full rounded-full px-4 py-2.5 text-sm font-semibold shadow-soft transition ${
-                    cart.length
-                      ? "bg-slate-900 text-lemon-50 hover:bg-slate-800"
-                      : "cursor-not-allowed bg-slate-200 text-slate-500"
-                  }`}
-                >
-                  Place order
-                </button>
-
-                <p className="pt-1 text-[0.65rem] text-slate-400">
-                  You won&apos;t be charged yet – this is a demo ordering
-                  experience.
-                </p>
-              </form>
-            </div>
-
-            <div className="rounded-[20px] border border-lemon-100 bg-lemon-50/60 px-4 py-3 text-[0.75rem] text-olive-900 shadow-soft">
-              <p className="font-semibold">Delivery notes</p>
-              <p className="mt-1">
-                We carefully package all dishes to arrive warm and fresh. For
-                allergies or special instructions, add a note at checkout or call
-                us after placing your order.
-              </p>
-            </div>
+            <CheckoutPanel
+              cart={cart}
+              name={name}
+              address={address}
+              totalAmount={totalAmount}
+              setName={setName}
+              setAddress={setAddress}
+              handleOrderSubmit={handleOrderSubmit}
+              decreaseQuantity={decreaseQuantity}
+              removeItem={removeItem}
+              setCart={setCart}
+            />
+            <DeliveryNotes />
           </aside>
         </section>
 
@@ -394,5 +506,6 @@ const OrderOnline = () => {
 };
 
 export default OrderOnline;
+
 
 

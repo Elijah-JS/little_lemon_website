@@ -43,24 +43,24 @@ const Login = () => {
         </title>
       </Helmet>
 
-      <section className="mx-auto flex max-w-6xl items-center justify-center px-4 pb-16 pt-10 md:px-6">
-        <div className="relative grid w-full max-w-3xl overflow-hidden rounded-3xl bg-white/95 shadow-soft md:grid-cols-[1.1fr_0.9fr]">
+      <section className="mx-auto flex min-h-[calc(100vh-7rem)] max-w-6xl items-center justify-center px-4 pb-16 pt-10 md:px-6">
+        <div className="relative grid w-full max-w-[26rem] overflow-hidden rounded-3xl bg-white/95 shadow-soft sm:max-w-xl md:max-w-3xl md:grid-cols-[1.1fr_0.9fr]">
           {/* Decorative lemons */}
           <img
             src={lemon}
             alt=""
-            className="pointer-events-none absolute -left-10 -top-10 h-28 opacity-10"
+            className="pointer-events-none absolute -left-10 -top-10 h-24 opacity-10 md:h-28"
           />
           <img
             src={lemon}
             alt=""
-            className="pointer-events-none absolute -right-8 bottom-0 h-32 opacity-10"
+            className="pointer-events-none absolute -right-8 bottom-0 h-24 opacity-10 md:h-32"
           />
 
           {/* LEFT – FORM */}
-          <div className="relative border-r border-lemon-50/80 px-6 py-8 md:px-10">
+          <div className="relative border-b border-lemon-50/80 px-5 py-7 sm:px-7 md:border-b-0 md:border-r md:px-10 md:py-8">
             {/* Toggle Tabs */}
-            <div className="mb-6 inline-flex rounded-full bg-lemon-50 p-1 text-xs font-medium text-olive-700 shadow-soft">
+            <div className="mb-5 inline-flex rounded-full bg-lemon-50 p-1 text-[0.7rem] font-medium text-olive-700 shadow-soft">
               <button
                 type="button"
                 onClick={() => setMode("login")}
@@ -92,11 +92,11 @@ const Login = () => {
                 {isLogin ? "Welcome back" : "Join our family"}
               </p>
 
-              <h1 className="mt-2 font-display text-3xl font-semibold tracking-tight text-slate-900">
+              <h1 className="mt-2 font-display text-[1.6rem] font-semibold tracking-tight text-slate-900 sm:text-[1.8rem]">
                 {isLogin ? "One of us?" : "Let’s get you seated."}
               </h1>
 
-              <p className="mt-1 text-sm text-slate-600">
+              <p className="mt-1 text-[0.8rem] text-slate-600 sm:text-sm">
                 {isLogin
                   ? "Log in to access your reservations and orders."
                   : "Create an account to enjoy faster bookings and a personal dining experience."}
@@ -198,7 +198,7 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-full bg-lemon-400 px-6 py-2.5 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-lemon-300"
+                className="mt-1 inline-flex w-full items-center justify-center rounded-full bg-lemon-400 px-6 py-2.5 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-lemon-300"
               >
                 {isLogin ? "Login" : "Create account"}
               </button>
@@ -212,7 +212,7 @@ const Login = () => {
             </h2>
             <p className="mt-2 text-sm text-slate-700 leading-relaxed">
               Save your favorites, manage your reservations, and enjoy a
-              personalized dining experience.
+              personalized dining experience each time you visit Little Lemon.
             </p>
           </div>
         </div>
@@ -233,6 +233,7 @@ const Login = () => {
 };
 
 export default Login;
+
 
 
 
