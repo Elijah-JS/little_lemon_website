@@ -26,14 +26,14 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-40 border-b border-olive-100/70 bg-[#fffdf6]/85 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 md:px-6 md:py-3.5">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
         {/* Brand */}
         <Link
           to="/"
           className="flex items-center gap-2"
           onClick={closeMobileMenu}
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-lemon-300 shadow-soft">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-lemon-300 shadow-soft">
             <img
               src={logo}
               alt="Little Lemon logo"
@@ -126,25 +126,45 @@ const Navbar = () => {
               </Link>
             )}
 
-            {/* Hamburger */}
+            {/* Hamburger / X with real icons */}
             <button
               type="button"
               onClick={() => setMobileOpen((prev) => !prev)}
               aria-label="Toggle navigation"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-olive-100 bg-white/80 shadow-soft"
+              aria-expanded={mobileOpen}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-olive-200 bg-white/90 shadow-soft"
             >
-              <span className="relative block h-[1px] w-4 bg-olive-800">
-                <span
-                  className={`absolute left-0 top-[-5px] h-[1px] w-4 bg-olive-800 transition-transform ${
-                    mobileOpen ? "translate-y-[5px] rotate-45" : ""
-                  }`}
+              {/* Hamburger icon */}
+              <svg
+                className={`${mobileOpen ? "hidden" : "block"} h-5 w-5 text-slate-900`}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
-                <span
-                  className={`absolute left-0 top-[5px] h-[1px] w-4 bg-olive-800 transition-transform ${
-                    mobileOpen ? "-translate-y-[5px] -rotate-45" : ""
-                  }`}
+              </svg>
+
+              {/* X icon */}
+              <svg
+                className={`${mobileOpen ? "block" : "hidden"} h-5 w-5 text-slate-900`}
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M6 18L18 6M6 6l12 12"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
-              </span>
+              </svg>
             </button>
           </div>
         </div>
@@ -189,5 +209,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
 
