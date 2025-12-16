@@ -4,8 +4,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 import Notification from "./Notification";
-
-import lemon from "../assets/lemon.png";
 import image1 from "../assets/last.jpg";
 import image2 from "../assets/new.jpeg";
 import image3 from "../assets/spag.jpg";

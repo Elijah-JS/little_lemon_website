@@ -8,7 +8,6 @@ import Notification from "./Notification";
 import lemon from "../assets/lemon.png";
 import user from "../assets/user.png";
 import pass from "../assets/padlock.png";
-import logo from "../assets/Logo.svg";
 
 const Login = () => {
   const [showNotification, setShowNotification] = useState(false);
