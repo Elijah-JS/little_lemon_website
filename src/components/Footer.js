@@ -1,24 +1,13 @@
 import React from "react";
-import insta from "../assets/insta.svg";
-import face from "../assets/R.svg";
 
 export default function Footer() {
   const year = new Date().getFullYear();
-
-  const handleSocialClick = (platform) => {
-    // Replace these with real URLs later
-    if (platform === "instagram")
-      window.open("https://instagram.com", "_blank", "noopener,noreferrer");
-    if (platform === "facebook")
-      window.open("https://facebook.com", "_blank", "noopener,noreferrer");
-  };
 
   return (
     <footer className="w-full bg-[#1F2A24] text-[#F4F1EA] mt-16">
       {/* TOP SOCIAL ROW */}
       <div className="flex w-full justify-center py-3">
-        <div className="flex items-center gap-6">
-        </div>
+        <div className="flex items-center gap-6"></div>
       </div>
 
       {/* PREMIUM DIVIDER LINE */}
