@@ -7,12 +7,14 @@ export default function Footer() {
 
   const handleSocialClick = (platform) => {
     // Replace these with real URLs later
-    if (platform === "instagram") window.open("https://instagram.com", "_blank", "noopener,noreferrer");
-    if (platform === "facebook") window.open("https://facebook.com", "_blank", "noopener,noreferrer");
+    if (platform === "instagram")
+      window.open("https://instagram.com", "_blank", "noopener,noreferrer");
+    if (platform === "facebook")
+      window.open("https://facebook.com", "_blank", "noopener,noreferrer");
   };
 
   return (
-    <footer className="w-full bg-[#3e4a32] text-lemon-50 mt-16">
+    <footer className="w-full bg-[#1F2A24] text-[#F4F1EA] mt-16">
       {/* TOP SOCIAL ROW */}
       <div className="flex w-full justify-center py-3">
         <div className="flex items-center gap-6">
@@ -47,17 +49,17 @@ export default function Footer() {
       </div>
 
       {/* PREMIUM DIVIDER LINE */}
-      <div className="border-t border-lemon-200/30 mx-auto max-w-4xl"></div>
+      <div className="border-t border-white/10 mx-auto max-w-4xl"></div>
 
       {/* COPYRIGHT ROW */}
-      <div className="text-center py-2 text-[0.8rem] font-medium tracking-tight">
+      <div className="text-center py-2 text-[0.8rem] font-medium tracking-tight text-[#F4F1EA]">
         © {year} Little Lemon Restaurant
-        <span className="px-2">•</span>
-        All rights reserved.
+        <span className="px-2 text-white/40">•</span>
+        <span className="text-white/70">All rights reserved.</span>
       </div>
 
       {/* TAGLINE */}
-      <div className="text-center pb-4 text-[0.75rem] text-lemon-200/80 tracking-wide">
+      <div className="text-center pb-4 text-[0.75rem] text-white/60 tracking-wide">
         Designed for a cozy corner of the Mediterranean in Chicago.
       </div>
     </footer>

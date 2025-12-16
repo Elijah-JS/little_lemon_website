@@ -25,7 +25,7 @@ const Navbar = () => {
   const closeMobileMenu = () => setMobileOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-olive-100/70 bg-[#fffdf6]/85 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#1F2A24]/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6 md:py-4">
         {/* Brand */}
         <Link
@@ -33,7 +33,7 @@ const Navbar = () => {
           className="flex items-center gap-2"
           onClick={closeMobileMenu}
         >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-lemon-300 shadow-soft">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-lemon-400 shadow-soft">
             <img
               src={logo}
               alt="Little Lemon logo"
@@ -41,10 +41,10 @@ const Navbar = () => {
             />
           </div>
           <div className="leading-tight">
-            <p className="font-display text-sm font-semibold text-slate-900">
+            <p className="font-display text-sm font-semibold text-[#F4F1EA]">
               Little Lemon
             </p>
-            <p className="text-[0.65rem] text-slate-500">Chicago</p>
+            <p className="text-[0.65rem] text-[#C9C6BE]">Chicago</p>
           </div>
         </Link>
 
@@ -59,8 +59,8 @@ const Navbar = () => {
                 [
                   "relative pb-1 transition",
                   isActive
-                    ? "font-semibold text-olive-800"
-                    : "text-slate-500 hover:text-slate-900",
+                    ? "font-semibold text-lemon-300"
+                    : "text-[#D6D3CB] hover:text-[#F4F1EA]",
                 ].join(" ")
               }
             >
@@ -68,7 +68,7 @@ const Navbar = () => {
                 <>
                   {item.label}
                   {isActive && (
-                    <span className="absolute inset-x-0 -bottom-0.5 mx-auto h-[2px] max-w-[18px] rounded-full bg-lemon-400" />
+                    <span className="absolute inset-x-0 -bottom-0.5 mx-auto h-[2px] max-w-[18px] rounded-full bg-lemon-300" />
                   )}
                 </>
               )}
@@ -81,22 +81,22 @@ const Navbar = () => {
           {/* Desktop CTA */}
           <Link
             to="/reservations"
-            className="hidden rounded-full bg-slate-900 px-4 py-2 text-[0.75rem] font-semibold text-lemon-50 shadow-soft transition hover:bg-slate-800 md:inline-flex"
+            className="hidden rounded-full bg-lemon-400 px-4 py-2 text-[0.75rem] font-semibold text-[#1F2A24] shadow-soft transition hover:bg-lemon-300 md:inline-flex"
           >
             Book a table
           </Link>
 
           {/* Account area */}
           {user ? (
-            <div className="hidden items-center gap-2 rounded-full border border-olive-100 bg-white/80 px-3 py-1.5 text-[0.75rem] shadow-soft md:inline-flex">
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-lemon-300 text-[0.7rem] font-semibold text-olive-900">
+            <div className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-[0.75rem] shadow-soft md:inline-flex">
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-lemon-300 text-[0.7rem] font-semibold text-[#1F2A24]">
                 {initials}
               </div>
               <div className="leading-tight">
-                <p className="text-[0.65rem] uppercase tracking-[0.16em] text-olive-600">
+                <p className="text-[0.65rem] uppercase tracking-[0.16em] text-[#C9C6BE]">
                   Guest
                 </p>
-                <p className="text-xs font-semibold text-slate-900">
+                <p className="text-xs font-semibold text-[#F4F1EA]">
                   Hi, {user.name}
                 </p>
               </div>
@@ -104,65 +104,60 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="hidden items-center rounded-full border border-olive-200 bg-white/85 px-4 py-1.5 text-[0.75rem] font-semibold text-olive-800 shadow-soft transition hover:border-olive-400 hover:text-slate-900 md:inline-flex"
+              className="hidden items-center rounded-full border border-lemon-300/60 bg-transparent px-4 py-1.5 text-[0.75rem] font-semibold text-[#F4F1EA] shadow-soft transition hover:bg-white/5 md:inline-flex"
             >
               Login
             </Link>
           )}
 
-          {/* MOBILE: compact login / avatar + hamburger */}
+          {/* MOBILE: avatar / login + hamburger */}
           <div className="flex items-center gap-2 md:hidden">
             {user ? (
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-lemon-300 text-[0.7rem] font-semibold text-olive-900 shadow-soft">
+              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-lemon-300 text-[0.7rem] font-semibold text-[#1F2A24] shadow-soft">
                 {initials}
               </div>
             ) : (
               <Link
                 to="/login"
-                className="rounded-full border border-olive-200 bg-white/90 px-3 py-1 text-[0.7rem] font-semibold text-olive-800 shadow-soft"
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[0.7rem] font-semibold text-[#F4F1EA] shadow-soft"
                 onClick={closeMobileMenu}
               >
                 Login
               </Link>
             )}
 
-            {/* Hamburger / X with real icons */}
             <button
               type="button"
               onClick={() => setMobileOpen((prev) => !prev)}
               aria-label="Toggle navigation"
               aria-expanded={mobileOpen}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-olive-200 bg-white/90 shadow-soft"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 shadow-soft"
             >
-              {/* Hamburger icon */}
+              {/* Hamburger */}
               <svg
-                className={`${mobileOpen ? "hidden" : "block"} h-5 w-5 text-slate-900`}
+                className={`${mobileOpen ? "hidden" : "block"} h-5 w-5 text-[#F4F1EA]`}
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M3.75 5.25h16.5M3.75 12h16.5M3.75 18.75h16.5"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
                 />
               </svg>
 
-              {/* X icon */}
+              {/* X */}
               <svg
-                className={`${mobileOpen ? "block" : "hidden"} h-5 w-5 text-slate-900`}
+                className={`${mobileOpen ? "block" : "hidden"} h-5 w-5 text-[#F4F1EA]`}
                 viewBox="0 0 24 24"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   d="M6 18L18 6M6 6l12 12"
                   stroke="currentColor"
                   strokeWidth="1.8"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
                 />
               </svg>
             </button>
@@ -172,7 +167,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {mobileOpen && (
-        <div className="border-t border-olive-100/70 bg-[#fffdf6]/95 shadow-soft md:hidden">
+        <div className="border-t border-white/10 bg-[#1F2A24]/95 shadow-soft md:hidden">
           <div className="mx-auto max-w-6xl px-4 py-3 space-y-2 text-sm">
             {navItems.map((item) => (
               <NavLink
@@ -184,20 +179,20 @@ const Navbar = () => {
                   [
                     "flex items-center justify-between rounded-2xl px-3 py-2",
                     isActive
-                      ? "bg-lemon-50 text-olive-900 font-semibold"
-                      : "text-slate-600 hover:bg-olive-50/70",
+                      ? "bg-white/10 text-lemon-300 font-semibold"
+                      : "text-[#D6D3CB] hover:bg-white/5",
                   ].join(" ")
                 }
               >
                 {item.label}
-                <span className="text-[0.65rem] text-olive-500">›</span>
+                <span className="text-[0.65rem] text-[#C9C6BE]">›</span>
               </NavLink>
             ))}
 
             <Link
               to="/reservations"
               onClick={closeMobileMenu}
-              className="mt-1 inline-flex w-full items-center justify-center rounded-full bg-slate-900 px-4 py-2.5 text-[0.8rem] font-semibold text-lemon-50 shadow-soft transition hover:bg-slate-800"
+              className="mt-1 inline-flex w-full items-center justify-center rounded-full bg-lemon-400 px-4 py-2.5 text-[0.8rem] font-semibold text-[#1F2A24] shadow-soft transition hover:bg-lemon-300"
             >
               Book a table
             </Link>
@@ -209,4 +204,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 
