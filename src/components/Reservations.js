@@ -240,7 +240,7 @@ const ReservationImagery = () => {
           className="h-52 w-full object-cover md:h-56"
         />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent px-4 pb-4 pt-10">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-lemon-200/90">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-lemon-50">
             Chef&apos;s table
           </p>
           <p className="mt-1 text-sm font-medium text-lemon-50">

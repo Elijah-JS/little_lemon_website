@@ -18,33 +18,6 @@ export default function Footer() {
       {/* TOP SOCIAL ROW */}
       <div className="flex w-full justify-center py-3">
         <div className="flex items-center gap-6">
-          {/* Instagram */}
-          <button
-            type="button"
-            onClick={() => handleSocialClick("instagram")}
-            className="group"
-            aria-label="Instagram"
-          >
-            <img
-              src={insta}
-              alt=""
-              className="h-5 w-5 opacity-80 transition group-hover:opacity-100"
-            />
-          </button>
-
-          {/* Facebook */}
-          <button
-            type="button"
-            onClick={() => handleSocialClick("facebook")}
-            className="group"
-            aria-label="Facebook"
-          >
-            <img
-              src={face}
-              alt=""
-              className="h-5 w-5 opacity-80 transition group-hover:opacity-100"
-            />
-          </button>
         </div>
       </div>
 
